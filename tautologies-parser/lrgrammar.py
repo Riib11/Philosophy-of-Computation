@@ -36,6 +36,8 @@ class LRGrammar:
   def parse(self, string):
     unary_symbols = [ x[0] for x in self.unaries.keys() ]
 
+    path = []
+
     def rec(xs):
 
       # binary
@@ -51,7 +53,9 @@ class LRGrammar:
         
         # pattern match with rule source
         if (symbol, (parsed1, parsed2)) in self.binaries:
-          return self.binaries[(symbol, (parsed1, parsed2))], xs
+          source = self.binaries[(symbol, (parsed1, parsed2))]
+          path.append("("+symbol+" "+parsed1+" "+parsed2+")"+" <- "+source)
+          return source, xs
         else:
           check_WWF(False,"no binary pattern found for '"
             +symbol+" "+parsed1+" "+parsed2+"'")
@@ -64,7 +68,9 @@ class LRGrammar:
         
         # pattern match with rule source
         if (symbol, parsed) in self.unaries:
-          return self.unaries[(symbol, parsed)], xs
+          source = self.unaries[(symbol, parsed)]
+          path.append(symbol+" "+parsed+" <- "+source)
+          return source, xs
         else:
           check_WWF(False, "no unary pattern found for '"
             +symbol+" "+parsed+"'")
@@ -76,12 +82,18 @@ class LRGrammar:
         
         # pattern match with rule source
         if symbol in self.ternaries:
-          return self.ternaries[symbol], xs
+          source = self.ternaries[symbol]
+          path.append(symbol+" <- "+source)
+          return source, xs
         else:
           check_WWF(False, "no ternary found for '"+symbol+"'")
 
     xs = self.lex(string)
     parsed, xs = rec(xs)
+
+    for step in path:
+    # for step in reversed(path):
+      print(step)
     check_WWF(len(xs) == 0, "unexpected rest of string")
     return parsed
 

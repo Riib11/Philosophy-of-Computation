@@ -1,11 +1,12 @@
 from ntautology import make_ntautology_parser
 
 print()
-parser = make_ntautology_parser(1)
-string = "(| 0 ~0)"
+parser = make_ntautology_parser(2)
+string = "(| 1 ~1)"
 print("="*60)
-print(string, "<==", parser(string))
-print()
+parsed, result = parser(string)
+print("-"*50)
+print(parsed)
 
 # from lrgrammar import LRGrammar
 
