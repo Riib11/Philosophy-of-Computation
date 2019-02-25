@@ -1,0 +1,2 @@
+python doc2freq.py $1
+rscript zipf.R $1.tsv
