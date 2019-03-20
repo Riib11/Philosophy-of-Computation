@@ -17,10 +17,29 @@ There are other several resources that explain specific and surrounding aspects 
 - universal Turing machine implementation: https://github.com/simonbreiter/universal-turing-machine/blob/master/src/universal_turing_machine.py
 - Turing universality in GOL: https://www.cs.bgu.ac.il/~sipper/publications/ReviewofTuringMachineUniversality.pdf
 
+## Terminology
+
+- **LWSS**: light-weight spaceship
+- **MWSS**: mid-weight spaceship
+
 ## Implementation
 
-So, for an analysis of this specific 3-state TM. There are several key components to look at. I've divided them into separate `rle` files so that Golly can simulate them independently.
+So, for an analysis of this specific 3-state TM. I name it RTM (for Rendell's Turing Machine). There are several key components to look at. I've divided them into separate `rle` files so that Golly can simulate them independently.
 
-### Memory Cell Tap
 
-The memory cell first receives an input, and and then doubles that input as its output. The output is used to interfere with a fleet of spaceships going by, leaving holes in the fleet.
+### Cell
+
+The cell first receives an input, and and then doubles that input as its output. The output is used to interfere with a fleet of spaceships going by, leaving holes in the fleet.
+
+The following image demonstrates the specific actions in the cell.
+
+![](RTM-cell.png)
+
+- **A**: external horizontal input for cell; 1 MWSS
+- **B**: external vertical input for cell; 1 LWSS
+- **C**: formatter for collision of **A, B**; 1 Pentadecathlon
+- **D**: input from **C**; 1 glider
+- **E**: internal loop of reflecting gliders, which is disrupted by **D**
+- **F**: output for cell, from disruption of **E**; 2 gliders
+
+### 
