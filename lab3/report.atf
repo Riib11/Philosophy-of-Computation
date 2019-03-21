@@ -1,0 +1,354 @@
+<|----------------------------------------------------------------------------|>
+<|-- begin head |> <|head
+<|----------------------------------------------------------------------------|>
+
+
+<|title    | Fully General Computation in the Game of Life |>
+<|subtitle | Philosophy of Computation Lab III |>
+<|author   | Henry Blanchette |>
+<|date     | March 22, 2019 |>
+
+<|-- <|abstract
+    To do
+|>
+
+<|----------------------------------------------------------------------------|>
+<|-- end head |> |>
+<|----------------------------------------------------------------------------|>
+
+
+<|----------------------------------------------------------------------------|>
+<|-- begin body |> <|body
+<|----------------------------------------------------------------------------|>
+
+<|#|Turing Machine Structure|>
+
+TODO
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|#|A Turing Machine in the Game of Life|>
+
+This description is of all the modules required to build a generic Turing Machine in the Game of Life. However, the construction differs based on how many states are needed, how many letters are in the alphabet, and how much tape space is needed for the entire run of the machine. Notably, this last requirement is undecidable for Turing machines in general.
+
+<!-- TODO: keep this or use the pictures from the website? -->
+The easiest example to first examine is a very simple 3-stated, 2-lettered Turing machine. The presented diagrams in this section will almost all be subsections of this simple example machine, to show the context of their operation within the entire machine.
+
+However, arbitrarily complex machines can be constructed using the same method as was used to construct this toy example. For example, a Universal Turing Machine has been successfully constructed and I will exhibit it in all of its glory at the end of this paper.
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|#|Logic in the Game of Life|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|##|Spaceships|>
+
+<|Definition
+<|*|glider|>: The smallest spaceship that travels diagonally by wagging its tail.
+|>
+
+<|Definition
+<|*|LWSS|>: A lightweight spaceship that travels horizontally.
+|>
+
+<|Definition
+<|*|MWSS|>: A middleweight spaceship that travels horizontally.
+|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|##|Spaceship Guns|>
+
+<|Definition
+<|*|P$X$|>: Classifies a constant spaceship stream that contains a spaceship at $X$-generation intervals. For example, a P120 glider stream is a stream that contains a single glider at 120-generation intervals.
+|>
+
+<|Definition
+<|*|P$X$ $S$ GUN|>: A spaceship gun that emits a P$X$ $S$ stream. For example, a P120 glider gun is a spaceship gun that emits a glider every 120-generations, maintaining a P120 glider stream.
+|>
+
+<|figure|P120-GUN.png|A P120 glider gun|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+
+<|##|Signals|>
+
+<|Definition
+<|*|Stream|>: A constant, repeated output of spaceships in a line.
+|>
+
+<|Definition
+<|*|Signal|>: A signal is some section of the stream that is present over some number of generations. <|*|0|> is encoded as an absent spaceship in signal. <|*|1|> is encoded by a present spaceship in the signal.
+|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|##|Signal Logic|>
+
+<|Definition
+<|*|Logic Gate|>: A logic gate is defined by a logical function <|$ R |> that takes as input 2 bits. When two input signals <|$ a, b |> are sent into a logic gate, an output signal with the bits <|$ R(a_i, b_i) |> where <|$ a_i, b_i |> are the <|$ i\text{th} |> bits of each input signal.
+|>
+
+<|Definition
+<|*|Reflector|>: A reflector receives an input signal and then outputs a copy of that signal in some direction. The output signal may be modified in some way e.g. inverted or of a different spaceship type.
+|>
+
+
+
+<|Definition
+<|*|Signal Inversion|>: An inverted signal is the <|*|NOT|> of a signal. Composing guns, reflectors, and gates often makes use of signal inversion. For example, many reflector implementations also invert their input signal, so referring to the inverted signal's state is useful.
+|>
+<|Definition
+
+<|*|Eater|>: An eater receives as input a spaceship and then returns to the eater's original state. This process <|_|consumes|> that spaceship without any trace leftover.
+|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+
+<|##|Design Outline for Rendell's Turing Machine|>
+
+<|p
+The following sections will describe in detail how a specific style of Turing Machine can be constructed in the Game of Life. It is immensely complicated. Firstly, I will describe the basic outline of the Machine so that the details fit into a context that yields some purpose to their complexities. I will refer to this implementation of a Turing Machine in the Game of Life as RTM - Rendell's Turing Machine.
+|>
+
+<|p
+RTM is composed of the same parts described in the abstract description of a Turing Machine. RTM's TAPE is finite, however. The TAPE is split in half, where in the center is the TAPE read head apparatus. Each cell in the TAPE contains a value (alphabet letter), and the read head extracts that value at the beginning of every cycle (the POP part of the cycle) and sends it to the FSM.
+|>
+<|p
+The FSM consists of an <|$ n \times m |> grid of MEMORY CELLs, where <|$ n |> is the number of letters in the alphabet (including the blank letter) and <|$ m |> is the number of states in the RTM. The MEMORY CELL at address <|$ (i,j) |> corresponds to the transition from state <|$ i |> given read letter <|$ j |>.
+|>
+<|p
+When the FSM receives the value read from the TAPE, it combines it with the stored current state. This data is converted into a MEMORY CELL address (i.e. ROW ADDRESS, COLUMN ADDRESS), and then taps the MEMORY CELL at that address. The MEMORY CELL has stored in it a signal that corresponds to the symbol to write and the direction to remove of the transition is represents.
+|>
+<|p
+The output of the tapped MEMORY CELL is sent back to the TAPE read head, where the PUSH part of the cycle writes the correct symbol onto the TAPE, and then moves the values along the tape one space according to the direction dictated by the transition. Altogether, this completes one cycle of the RTM.
+|>
+
+<|figure|RTM.png|The RTM in all its glory.|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|##|FINITE STATE MACHINE (FSM)|>
+
+<|###|Operation|>
+
+<|p
+<|numbered
+|The SIGNAL DETECTOR sends the NEXT STATE message, part of which sends the ROW ADDRESS 1SSS.
+|The TAPE's OUTPUT COLLATOR sends the COLUMN ADDRESS 1VVV.
+|At the ROW ADDRESS, a MWSS is sent eastward. At the COLUMN ADDRESS, LWSS is sent northward. They collide, and their collision is formatted to trigger the memory cell selected by (ROW ADDRESSS, COLUMN ADDRESS).
+|The selected memory cell outputs a pattern of gliders to the northeastward.
+|A P30 MWSS GUN firing eastward is intercepted by the memory cell's output. The resulting MWSS stream heading eastward is the inverse of the memory cell's output.
+|The inverted memory cell output stream is intercepted by a northward MWSS stream, which inverts to yield the original memory cell output in the northward stream.
+|This final output stream is collected by the SIGNAL DETECTOR.
+|>
+|>
+
+<|###|Components|>
+
+<|Definition
+<|*|ROW ADDRESS|>: This signal has the form 1SSSS where SSSS is the address of the next state for the FSM. The signal is sent down the left side of the FSM. At the left-most side of each row of the FSM is a COMPARATOR that is configured to recognize its row's address. When the signal matches a row via a COMPARATOR, the signal is eaten and a MWSS is emitted to the right along the row, followed by an output collector that the MWSS triggers. The output collector interacts as a 1GAP8 blocking a P30 LWSS GUN. This allows 8 LWSS through that follow that original MWSS. This signal of 8 LWSS capture the output of the memory cell that the MWSS taps.
+|>
+
+<|Definition
+<|*|COLUMN ADDRESS|>: This signal has the form 1VVV where VVV is the symbol just read from the TAPE. The inversion of this signal is sent by the OUTPUT COLLATOR to a P30 MWSS stream, un-inverting the signal and sending it across the bottom of the FSM. At the bottom of each column of the FSM is a COMPARATOR that is configured to recognize its column's address. When the signal matches a column via a COMPARATOR, the signal is eaten and a LWSS is emitted upward along the column (the output is converted to a LWSS via METAMORPHOSIS II).
+|>
+
+<|Definition
+<|*|MEMORY CELL|>: Stores an 8-bit glider signal. The signal is continuously reflected around the interior walls of the cell, and a FANOUT copies the signal each output-frame. If the MEMORY CELL has not been tapped at the start of the output-frame, then the output signal is eaten. If the MEMORY CELL has not been tapped at the start of the output-frame, the output is not eaten and is successfully emitted.
+|>
+
+<|Definition
+<|*|COMPARATOR|>: Receives an 8-bit signal and compares it to a stored signal value. The stores signal value is encoded in a MEMORY CELL. Each input-frame (8 time-steps), input and the the output from the MEMORY CELL is filtered through a NOT XOR gate and then sent into a SET RESET LATCH. A P240 GUN resets the latch every input-frame. The output is sampled by a glider from another P240 GUN right, slightly offset before the latch is reset, and this glider is destroyed if any bits of the input did not match the MEMORY CELL output. If all the bits did match, then the glider is successfully emitted. Note that the MEMORY CELL used here is slightly different from the MEMORY CELL used in the FSM - this MEMORY CELL repeatedly outputs its stored pattern whereas the FSM MEMORY CELL needs to be tapped before each output.
+|>
+
+<|figure|FSM.png|The FSM of the RTM.|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|##|TAPE|>
+
+<|p
+The TAPE is implemented as two stacks. In this way the finite state machine changes the position of the FSM's TAPE's read head by scrolling the TAPE's information left and right. The side of each stack closest to the TAPE's read head is called the CONTROL END.
+|>
+<|p
+There is no TAPE directly under the Read Head. A symbol extracted from the TAPE  into the FSM to be used as a state address during the Pop of one Cycle and then a symbol is inserted into the TAPE during the Push of the next Cycle.
+|>
+
+<|###|Operation|>
+
+<|numbered
+|The output from the SIGNAL DETECTOR is copied once.
+|One output copy is sent to each STACK's CONTROL CONVERSION.
+|One of the STACK's OUTGATE is sent to the OUTPUT COLATOR.
+|The OUTPUT COLATOR sends this information to the FSM.
+|>
+
+<|###|Components|>
+
+<|Definition
+<|*|STACK|>: Is composed of some number of STACK CELLs in sequence. There are two cycles for updating the TAPE: PUSH and POP. Control signals are passed up each side of the STACK. At each cell, a FANOUT copies the signal - one signal is inputted to the cell and the other is forwarded further along the STACK. The signal inputted into the cell is used to contain any VALUE that is contained in the cell, creating a sort of cell wall. The PUSH CONTROL and POP CONTROL interfere with this signal, nullifying 4 bits in this cell wall, allowing the VALUE GLIDER to be transfered from to an adjacent cell.
+<|bulleted
+<|s
+<|*|PUSH|>: All VALUE GLIDERs in the STACK are moved one cell away from the CONTROL END, freeing up a cell at the CONTROL END.
+|>
+<|s
+<|*|POP|>: The VALUE GLIDER at the CONTROL END is removed and all VALUE GLIDERs in the STACK are moved one cell towards the CONTROL END, filling up the empty cell left by the removal.
+|>
+|>
+|>
+
+<|Definition
+<|*|VALUE GLIDER|>: Each stack cell has an interior that is capable of holding a VALUE GLIDER. The cell's walls, streams of gliders, reflect the VALUE GLIDER back and forth so that it is contained inside the stack cell. When one of the cell's walls is disrupted (a gap created by the PUSH CONTROL or POP CONTROL), the VALUE GLIDER is allowed to move in one direction along the TAPE into another stack cell. The only case when the VALUE GLIDER would exit the TAPE (the TAPE is finite) is when it is being popped (as part of POP) or when it goes off the non-CONTROL END, in which case it is released into the ether to be forgotten (include a larger tape if you need more space).
+|>
+
+<|Definition
+<|*|OUTGATE|>: A P120 GLIDER GUN tests for a 4-glider gap in the STACK's control stream, which is put there by POP CONTROL. On the occurrence of such a gap, the output of the gun gets through and triggers a 1GAP4 gate that samples for the 4 bits in an inverted copy of the cell wall. The gun additionally expands the gap by 1 bit, and includes this n the output of the OUTGATE. The output is of the form 1VVV - an address for the FSM.
+|>
+
+<|Definition
+<|*|OUTPUT COLATOR|>: Inverts each STACK OUTGATE output and feeds it to the COLUMN ADDRESS of the FSM.
+|>
+
+<|Definition
+<|*|POP CONTROL|>: Is a signal with a single glider (indicating that a POP should be initiated). It is sent along the TAPE and creates a gap in the control-side cell wall of each cell, allowing the contained VALUE GLIDERS to translate one cell towards the CONTROL END of the TAPE. At the CONTROL END of the tape, the bit in the CONTROL CELL is released and tested by the INGATE, which indicates if the CONTROL CELL's value was a 0 or 1.
+|>
+
+<|Definition
+<|*|PUSH CONTROL|>: Is a signal with a single glider (indicating that a PUSH should be initiated). It is sent along the TAPE and creates a gap in the control-opposite-side cell wall of each cell, allowing the contained VALUE GLIDERS to translate one cell away from the CONTROL END of the TAPE. This leaves empty the CONTROL CELL.
+|>
+
+<|Definition
+<|*|CONTROL CELL|>: The stack cell furthest to the control end (right next to the STACK read head section).
+|>
+
+<|figure|TAPE.png|The TAPE of the RTM.|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|##|SIGNAL DETECTOR|>
+
+<|p
+The SIGNAL DETECTOR joins the FSM to the TAPE.
+<|bulleted
+|Detects output from the FSM and generates the input for the CONTROL CONVERSION.
+|Sends NEXT STATE from OUTPUT COLLATOR to FSM
+|>
+|>
+
+<|###|Operation|>
+
+<|p
+<|numbered
+|Receives an input glider signal. The signal has two 1s on its ends, with some number of 0s between them. In gliders, this looks like two gliders that are some variable distance apart (the distance is divisible by the time-set of and within a certain specific to the SIGNAL DETECTOR).
+|Inverts the signal and uses a FANOUT to split it into two signals heading in opposite directions.
+|Each inverted copy of the signal interacts with some gates and reflectors to un-invert in the form of two output signals. The two output signals differ depending on the input signal.
+|One output is sent to the CONTROL CONVERSION
+|The other output is combined with a copy of the original input to convert the DVVVSSSS signal to DVV1SSSS so that 1SSS can be used to address the FSM. The D encodes the direction of the transition (left or right), the VVV encodes the letter value just read, and the SSSS encodes the next state. This output is sent to NEXT STATE DELAY.
+|>
+|>
+
+<|###|Components|>
+
+<|Definition
+<|*|SET RESET LATCH|>: Receives glider input signals from two sources: on and off. When a signal is received from the on-input and the LATCH is in state OFF, the LATCH begins emitting a stream of constant 1s. When a signal is received from the off-input and LATCH is in state ON, the LATCH stops emitting a stream of 1s (i.e. begins emitting a stream of 0s instead).
+|>
+
+<|figure|SET-RESET-LATCH.png|A SET RESET LATCH|>
+
+<|Definition
+<|*|CONTROL CONVERSION|>: Each STACK has a different implementation of this; one performs a PUSH and the other performs a POP. Receives two input from SIGNAL DETECTOR: One input is a glider stream with 9 gliders with the form DVVVSSSS where D is the direction for POP/PUSH, VVV is the symbol to POP/PUSH and SSSS is the NEXT STATE for the FSM. The other input is is a glider indicating that a signal has been received.
+<|p
+A P240 GLIDER GUN receives a NOT D glider from the inverted DVVVSSSS signal to produce an output but only when D is nonzero. This is passed on to a FANOUT, which outputs two copies of the signal - one two the PUSH/POP CONTROL of the STACK and the other (a single glider) towards the other input from the SIGNAL DETECTOR to delete it. This SIGNAL DETECTOR is either for the PUSH CONTROL or POP CONTROL of the STACK.
+|>
+|>
+
+<|Definition
+<|*|NEXT STATE DELAY|>: A long loop that delays the NEXT STATE signal so that the address signal to is received by the FSM in parallel with the TAPE's output. The TAPE's output is originally DVV1SSSS, but along its way to the FSM, it is modified by a 1GAP3 powered by a P240 GLIDER GUN which removes the DVV from the signal, leaving 1SSSS for input into the ROW ADDRESS.
+|>
+
+<|figure|SIGNAL-DETECTOR.png|The SIGNAL DETECTOR|>
+
+<|----------------------------------------------------------------------------|>
+<|----------------------------------------------------------------------------|>
+
+<|##|Miscellaneous Components|>
+
+
+<|Definition
+<|*|1GAP$X$|>: The collision of a glider with a P30 glider stream that leaves a mass that blocks altogether X gliders before disappearing. This process yields a X-glider gap in the stream. For example, a 1GAP8 is the collision of a glider with such a stream that blocks 8 gliders.
+|>
+
+<|figure|1GAP8.png|The 1GAP8 collision and effect.|>
+
+<|Definition
+<|*|PENTADECATHLON|>: An oscillator of period 15 that reflects 90-degree reflect gliders from several different angles.
+|>
+
+<|Definition
+<|*|METAMORPHOSIS II|>: An oscillator of period 60 that interacts with a glider to produce a LWSS in a reflected direction from the glider.
+|>
+
+<|Definition
+<|*|FANOUT|>: Receives a glider input signal from one source. After receiving a signal, FANOUT emits two glider signals perpendicular to the input signal. FANOUT has a tunable leg to adjust the input step-time.
+|>
+
+<|figure|FANOUT.png|The FANOUT glider reflection pattern.|>
+
+
+<|----------------------------------------------------------------------------|>
+<|-- end body |> |>
+<|----------------------------------------------------------------------------|>
+
+<|----------------------------------------------------------------------------|>
+<|-- begin foot |> <|foot
+<|----------------------------------------------------------------------------|>
+
+<|bibliography
+
+  <|bib-item
+  Rendell P. 2001. A Turing Machine In Conway's Game Life. [<|@|https://www.ics.uci.edu/~welling/teaching/271fall09/Turing-Machine-Life.pdf|pdf|>]
+  |>
+
+  <|bib-item
+  Rennard J. Implementation of logical functions in the Game of Life. [<|@|http://www.rennard.org/alife/CollisionBasedRennard.pdf|pdf|>]
+  |>
+
+  <|bib-item
+  Rendell P. 2018. Details of a Turing Machine in Conway's Game of Life. [<|@|http://rendell-attic.org/gol/tmdetails.htm|web|>]
+  |>
+
+  <|bib-item
+  Rendell P. 2018. This is a Turing Machine implemented in Conway's Game of Life. [<|@|http://rendell-attic.org/gol/tm.htm|web|>]
+  |>
+  
+  <|bib-item
+  Rendell P. 2018. This is a Universal Turing Machine (UTM) implemented in Conway's Game of Life. [<|@|http://rendell-attic.org/gol/utm/index.htm|web|>]
+  |>
+
+  <|bib-item
+  Rendell P. 2018. This is a Fully Universal Turing Machine (UTM) implemented in Conway's Game of Life. [<|@|http://rendell-attic.org/gol/fullutm/index.htm|web|>]
+  |>
+
+  <|bib-item
+  LifeWiki. [<|@|http://www.conwaylife.com/wiki/|web|>]
+  |>
+
+|>
+
+<|----------------------------------------------------------------------------|>
+<|-- end foot |> |>
+<|----------------------------------------------------------------------------|>
