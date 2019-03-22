@@ -3,13 +3,13 @@
 <|----------------------------------------------------------------------------|>
 
 
-<|title    | Fully General Computation in the Game of Life |>
+<|title    | Computation in Conway's Game of Life |>
 <|subtitle | Philosophy of Computation Lab III |>
 <|author   | Henry Blanchette |>
 <|date     | March 22, 2019 |>
 
-<|-- <|abstract
-    To do
+<|abstract
+    There are many explorations into the constructing of computing devices in Conway's Game of Life online in niche articles, but most of them are not approachable and do not detail well their methods in visuals or prose. In this lab I attempt to provide an addition to this corpus by explaining Paul Rendell's Turing Machine modular construction method in a fully bottom-up manner with visuals and formal explanations side-by-side.
 |>
 
 <|----------------------------------------------------------------------------|>
@@ -39,7 +39,7 @@ The Turing Machine accepts when the entire input has been read and the FSM is in
 For example, consider the following Turing Machine with the alphabet <|$ \Sigma := \{ 0, 1 \} |>:
 |>
 
-<|figure|TM-example.png|A 3-stated 2-lettered Turing Machine.|>
+<|figure|TM-example.png|A 3-stated 3-lettered Turing Machine.|>
 
 <|p
 It accepts a pattern of 1s (written as input on the tape), and leaves the tape with that pattern doubled. 
@@ -48,14 +48,15 @@ It accepts a pattern of 1s (written as input on the tape), and leaves the tape w
 <|----------------------------------------------------------------------------|>
 <|----------------------------------------------------------------------------|>
 
-<|#|A Turing Machine in the Game of Life|>
-
-This description is of all the modules required to build a generic Turing Machine in the Game of Life. However, the construction differs based on how many states are needed, how many letters are in the alphabet, and how much tape space is needed for the entire run of the machine. Notably, this last requirement is undecidable for Turing Machines in general.
-
-<|----------------------------------------------------------------------------|>
-<|----------------------------------------------------------------------------|>
-
 <|#|Computation in the Game of Life|>
+
+<|p
+This description is of all the modules required to build a generic Turing Machine in the Game of Life. However, the construction differs based on how many states are needed, how many letters are in the alphabet, and how much tape space is needed for the entire run of the machine. Notably, this last requirement is undecidable for Turing Machines in general.
+|>
+
+<|p
+Note that some of the figures show a single time-slice of the evolution of a Game of Life state, and others show something similar but also with blue-ish trails. These trails tint cells that have been alive at some point in the evolution, where a darker tint indicates more common liveliness of that cell. The purpose of this graphical style is to illustrate how a repetitious pattern typically acts over a short period of time, giving the reader a dynamic sense of the pattern.
+|>
 
 <|----------------------------------------------------------------------------|>
 <|----------------------------------------------------------------------------|>
@@ -216,12 +217,12 @@ There is no TAPE directly under the Read Head. A symbol extracted from the TAPE 
 <|Definition
 <|*|STACK|>: Is composed of some number of STACK CELLs in sequence. There are two cycles for updating the TAPE: PUSH and POP. Control signals are passed up each side of the STACK. At each cell, a FANOUT copies the signal - one signal is inputted to the cell and the other is forwarded further along the STACK. The signal inputted into the cell is used to contain any VALUE that is contained in the cell, creating a sort of cell wall. The PUSH CONTROL and POP CONTROL interfere with this signal, nullifying 4 bits in this cell wall, allowing the VALUE GLIDER to be transfered from to an adjacent cell.
 <|bulleted
-<|s
-<|*|PUSH|>: All VALUE GLIDERs in the STACK are moved one cell away from the CONTROL END, freeing up a cell at the CONTROL END.
-|>
-<|s
-<|*|POP|>: The VALUE GLIDER at the CONTROL END is removed and all VALUE GLIDERs in the STACK are moved one cell towards the CONTROL END, filling up the empty cell left by the removal.
-|>
+  <|s
+  <|*|PUSH|>: All VALUE GLIDERs in the STACK are moved one cell away from the CONTROL END, freeing up a cell at the CONTROL END.
+  |>
+  <|s
+  <|*|POP|>: The VALUE GLIDER at the CONTROL END is removed and all VALUE GLIDERs in the STACK are moved one cell towards the CONTROL END, filling up the empty cell left by the removal.
+  |>
 |>
 |>
 

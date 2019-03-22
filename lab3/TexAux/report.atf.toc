@@ -2,18 +2,18 @@
 \contentsline {section}{\numberline {2}A Turing Machine in the Game of Life}{2}{section.2}
 \contentsline {section}{\numberline {3}Computation in the Game of Life}{2}{section.3}
 \contentsline {subsection}{\numberline {3.1}Spaceships}{2}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Spaceship Guns}{2}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Signals}{2}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Signal Logic}{2}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Design Outline for Rendell's Turing Machine}{3}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.2}Spaceship Guns}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Signals}{3}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Signal Logic}{3}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Design Outline for Rendell's Turing Machine}{4}{subsection.3.5}
 \contentsline {subsection}{\numberline {3.6}FINITE STATE MACHINE (FSM)}{4}{subsection.3.6}
 \contentsline {subsubsection}{\numberline {3.6.1}Operation}{4}{subsubsection.3.6.1}
 \contentsline {subsubsection}{\numberline {3.6.2}Components}{5}{subsubsection.3.6.2}
-\contentsline {subsection}{\numberline {3.7}TAPE}{5}{subsection.3.7}
-\contentsline {subsubsection}{\numberline {3.7.1}Operation}{6}{subsubsection.3.7.1}
-\contentsline {subsubsection}{\numberline {3.7.2}Components}{6}{subsubsection.3.7.2}
-\contentsline {subsection}{\numberline {3.8}SIGNAL DETECTOR}{7}{subsection.3.8}
-\contentsline {subsubsection}{\numberline {3.8.1}Operation}{7}{subsubsection.3.8.1}
-\contentsline {subsubsection}{\numberline {3.8.2}Components}{8}{subsubsection.3.8.2}
-\contentsline {subsection}{\numberline {3.9}Miscellaneous Components}{9}{subsection.3.9}
-\contentsline {section}{\numberline {4}Universal Computation in the Game of Life}{10}{section.4}
+\contentsline {subsection}{\numberline {3.7}TAPE}{7}{subsection.3.7}
+\contentsline {subsubsection}{\numberline {3.7.1}Operation}{7}{subsubsection.3.7.1}
+\contentsline {subsubsection}{\numberline {3.7.2}Components}{7}{subsubsection.3.7.2}
+\contentsline {subsection}{\numberline {3.8}SIGNAL DETECTOR}{8}{subsection.3.8}
+\contentsline {subsubsection}{\numberline {3.8.1}Operation}{9}{subsubsection.3.8.1}
+\contentsline {subsubsection}{\numberline {3.8.2}Components}{9}{subsubsection.3.8.2}
+\contentsline {subsection}{\numberline {3.9}Miscellaneous Components}{10}{subsection.3.9}
+\contentsline {section}{\numberline {4}Universal Computation in the Game of Life}{11}{section.4}

@@ -22,7 +22,9 @@
 \newcommand{\define}[1]{{\sc Definition.} \textbf{#1}: }
 
 \begin{document}
-\begin{center}{\huge   Fully General Computation in the Game of Life }\\[0.4cm]{\large  Philosophy of Computation Lab III }\\[0.75cm]{\large  Henry Blanchette }\\[0.5cm]{\large  March 22, 2019 }\\[1.0cm]\end{center} \tableofcontents\section{Turing Machine Structure}
+\begin{center}{\huge   Computation in Conway's Game of Life }\\[0.4cm]{\large  Philosophy of Computation Lab III }\\[0.75cm]{\large  Henry Blanchette }\\[0.5cm]{\large  March 22, 2019 }\\[1.0cm]\begin{abstract}
+    There are many explorations into the constructing of computing devices in Conway's Game of Life online in niche articles, but most of them are not approachable and do not detail well their methods in visuals or prose. In this lab I attempt to provide an addition to this corpus by explaining Paul Rendell's Turing Machine modular construction method in a fully bottom-up manner with visuals and formal explanations side-by-side.
+\end{abstract}\end{center} \section{Turing Machine Structure}
 
 
 The Turing Machine has been agreed upon as the manifestation of what is referred to when one talk of \textit{algorithm}. That is, a Turing Machine the simplest possible programming tool for formally transcribing algorithms. There are several equivalent ways to specify a Turing Machine, and I will describe; I will describe the canonical version. A canonical Turing Machine consists of a finite state machine (FSM), a tape, and a tape read head.
@@ -56,7 +58,7 @@ For example, consider the following Turing Machine with the alphabet $  \Sigma :
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm,keepaspectratio]{images/TM-example.png}
-\captionsetup{labelformat=empty} \caption{A 3-stated 2-lettered Turing Machine.}
+\captionsetup{labelformat=empty} \caption{A 3-stated 3-lettered Turing Machine.}
 \end{figure}
 
 
@@ -64,11 +66,19 @@ For example, consider the following Turing Machine with the alphabet $  \Sigma :
 It accepts a pattern of 1s (written as input on the tape), and leaves the tape with that pattern doubled. 
 
 
-\section{A Turing Machine in the Game of Life}
+\section{Computation in the Game of Life}
+
 
 This description is of all the modules required to build a generic Turing Machine in the Game of Life. However, the construction differs based on how many states are needed, how many letters are in the alphabet, and how much tape space is needed for the entire run of the machine. Notably, this last requirement is undecidable for Turing Machines in general.
 
-\section{Computation in the Game of Life}\subsection{Spaceships}
+
+
+
+
+Note that some of the figures show a single time-slice of the evolution of a Game of Life state, and others show something similar but also with blue-ish trails. These trails tint cells that have been alive at some point in the evolution, where a darker tint indicates more common liveliness of that cell. The purpose of this graphical style is to illustrate how a repetitious pattern typically acts over a short period of time, giving the reader a dynamic sense of the pattern.
+
+
+\subsection{Spaceships}
 \noindent\textbf{glider}: The smallest spaceship that travels diagonally by wagging its tail.
 
 \vspace{1em}
@@ -229,10 +239,10 @@ There is no TAPE directly under the Read Head. A symbol extracted from the TAPE 
 \noindent\textbf{STACK}: Is composed of some number of STACK CELLs in sequence. There are two cycles for updating the TAPE: PUSH and POP. Control signals are passed up each side of the STACK. At each cell, a FANOUT copies the signal - one signal is inputted to the cell and the other is forwarded further along the STACK. The signal inputted into the cell is used to contain any VALUE that is contained in the cell, creating a sort of cell wall. The PUSH CONTROL and POP CONTROL interfere with this signal, nullifying 4 bits in this cell wall, allowing the VALUE GLIDER to be transfered from to an adjacent cell.
 \begin{itemize}
 \item  \textbf{PUSH}: All VALUE GLIDERs in the STACK are moved one cell away from the CONTROL END, freeing up a cell at the CONTROL END.
- 
+   
 
 \item  \textbf{POP}: The VALUE GLIDER at the CONTROL END is removed and all VALUE GLIDERs in the STACK are moved one cell towards the CONTROL END, filling up the empty cell left by the removal.
- 
+   
 \end{itemize}
 \vspace{1em}
 
