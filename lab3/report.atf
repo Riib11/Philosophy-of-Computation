@@ -23,24 +23,39 @@
 
 <|#|Turing Machine Structure|>
 
-TODO
+<|p
+The Turing Machine has been agreed upon as the manifestation of what is referred to when one talk of <|_|algorithm|>. That is, a Turing Machine the simplest possible programming tool for formally transcribing algorithms. There are several equivalent ways to specify a Turing Machine, and I will describe; I will describe the canonical version. A canonical Turing Machine consists of a finite state machine (FSM), a tape, and a tape read head.
+|>
+<|p
+The finite state machine is specified by an alphabet (set of letters) <|$ \Sigma |>, a finite set of states <|$ Q |>, an initial state <|$ q_0 \in Q |>, a set of accept states <|$ F \subset Q |>, and a set of transitions <|$ \Delta \subseteq \{ f : \Sigma \times Q \rightarrow Q \times \{Left, Right\} \} |>. <|$ \Delta |> describe how the FSM changes state given its current state and an input letter. The state machine encodes how the Turing Machine evolves over time and in what evolution step it is in at each point in time.
+|>
+<|p
+The tape is an infinite sequence of letters isomorphic to <|$ \mathbb{N} |>. That is, there is a beginning to the tape (entry 0), but no end. The Turing Machine begins operation with the input on the tape, starting from the beginning, and the rest of the tape after the input is filled with blank characters. The tape serves as a sort of infinite memory storage for the Turing Machine.
+|>
+<|p
+The Turing Machine accepts when the entire input has been read and the FSM is in an accept state. The Turing Machine rejects when the entire input has been read and the FSM is not in an accept state. The set of letter strings that a given Turing Machine accepts is the <|_|language|> of the Turing Machine.
+|>
+<|p
+For example, consider the following Turing Machine with the alphabet <|$ \Sigma := \{ 0, 1 \} |>:
+|>
+
+<|figure|TM-example.png|A 3-stated 2-lettered Turing Machine.|>
+
+<|p
+It accepts a pattern of 1s (written as input on the tape), and leaves the tape with that pattern doubled. 
+|>
 
 <|----------------------------------------------------------------------------|>
 <|----------------------------------------------------------------------------|>
 
 <|#|A Turing Machine in the Game of Life|>
 
-This description is of all the modules required to build a generic Turing Machine in the Game of Life. However, the construction differs based on how many states are needed, how many letters are in the alphabet, and how much tape space is needed for the entire run of the machine. Notably, this last requirement is undecidable for Turing machines in general.
-
-<!-- TODO: keep this or use the pictures from the website? -->
-The easiest example to first examine is a very simple 3-stated, 2-lettered Turing machine. The presented diagrams in this section will almost all be subsections of this simple example machine, to show the context of their operation within the entire machine.
-
-However, arbitrarily complex machines can be constructed using the same method as was used to construct this toy example. For example, a Universal Turing Machine has been successfully constructed and I will exhibit it in all of its glory at the end of this paper.
+This description is of all the modules required to build a generic Turing Machine in the Game of Life. However, the construction differs based on how many states are needed, how many letters are in the alphabet, and how much tape space is needed for the entire run of the machine. Notably, this last requirement is undecidable for Turing Machines in general.
 
 <|----------------------------------------------------------------------------|>
 <|----------------------------------------------------------------------------|>
 
-<|#|Logic in the Game of Life|>
+<|#|Computation in the Game of Life|>
 
 <|----------------------------------------------------------------------------|>
 <|----------------------------------------------------------------------------|>
@@ -134,7 +149,7 @@ When the FSM receives the value read from the TAPE, it combines it with the stor
 The output of the tapped MEMORY CELL is sent back to the TAPE read head, where the PUSH part of the cycle writes the correct symbol onto the TAPE, and then moves the values along the tape one space according to the direction dictated by the transition. Altogether, this completes one cycle of the RTM.
 |>
 
-<|figure|RTM.png|The RTM in all its glory.|>
+<|figure|RTM.png|An example of an RTM. The Turing Machine that it encodes is the same as the example Turing Machine given in the Turing Machine Structure section.|>
 
 <|----------------------------------------------------------------------------|>
 <|----------------------------------------------------------------------------|>
@@ -308,6 +323,21 @@ A P240 GLIDER GUN receives a NOT D glider from the inverted DVVVSSSS signal to p
 
 <|figure|FANOUT.png|The FANOUT glider reflection pattern.|>
 
+<|#|Universal Computation in the Game of Life|>
+
+<|p
+The Turing Machine used in the previous two sections is, notably, very simple. However, the RTM design method is capable of constructing arbitrarily-finitely-complex Turing Machines. Most importantly, a <|_|Universal Turing Machine|> (UTM) is possible to construct (with the caveat, of course, that the computer simulating it has a finite amount of tape to write on).
+|>
+<|p
+A UTM is a Turing Machine that is capable of simulating a given Turing Machine <|$ M |> on given input <|$ w |>. This is achieved by <|_|programming|> <|$ M, w |> onto the input tape for the UTM in such a way that the UTM interprets the <|$ M |> and <|$ w |> separately, and then simulates the running of <|$ M |> on <|$ w |>.
+|>
+<|p
+The RTM specification in section 2 has a strictly-finite tape, but this turns out to be possibly transcended still within the Game of Life. The following design implements a UTM in almost entirely the same way as the original RTM, but with some arms that grow the tape as the UTM runs. As long as the tape is long enough to hold the input, the tape will grow faster than it can be written to by the UTM, and so there is effectively infinite tape-space and so it is truly a universal machine.
+|>
+
+<|figure|URTM-infinite.png|A UTM implemented in the Game of Life by Rendell. The spider-like arms extend the tape so that the machine has effectively infinite tape-space to compute with. The inner mechanics works the same as the RTM specification.|>
+
+<|figure|URTM-zoom.png|A close-up of the familiar mechanisms of a UTM implemented in the Game of Life by Rendell.|>
 
 <|----------------------------------------------------------------------------|>
 <|-- end body |> |>

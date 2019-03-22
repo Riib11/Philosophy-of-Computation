@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 MAR 2019 13:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 MAR 2019 19:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -574,95 +574,140 @@ e
 \tf@toc=\write4
 \openout4 = `report.atf.toc'.
 
+
+<images/TM-example.png, id=76, 782.925pt x 380.42125pt>
+File: images/TM-example.png Graphic file (type png)
+
+<use images/TM-example.png>
+Package pdftex.def Info: images/TM-example.png used on input line 58.
+(pdftex.def)             Requested size: 284.52756pt x 138.2518pt.
  [1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <images
-/P120-GUN.png, id=105, 410.53375pt x 359.3425pt>
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
+s/TM-example.png>]
+<images/P120-GUN.png, id=95, 410.53375pt x 359.3425pt>
 File: images/P120-GUN.png Graphic file (type png)
 
 <use images/P120-GUN.png>
-Package pdftex.def Info: images/P120-GUN.png used on input line 61.
+Package pdftex.def Info: images/P120-GUN.png used on input line 94.
 (pdftex.def)             Requested size: 284.52756pt x 249.04869pt.
- [2 <./images/P120-GUN.png>]
-<images/RTM.png, id=114, 749.80125pt x 697.60625pt>
-File: images/RTM.png Graphic file (type png)
- <use images/RTM.png>
-Package pdftex.def Info: images/RTM.png used on input line 121.
-(pdftex.def)             Requested size: 284.52756pt x 264.72057pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] [4 <./images/RTM.png>] <images/FSM.png, id=135, 690.58pt x 643.40375pt>
+[2] [3 <./images/P120-GUN.png>]
+<images/RTM.png, id=108, 749.80125pt x 697.60625pt>
+File: images/RTM.png Graphic file (type png)
+ <use images/RTM.png>
+Package pdftex.def Info: images/RTM.png used on input line 154.
+(pdftex.def)             Requested size: 284.52756pt x 264.72057pt.
+
+[4 <./images/RTM.png>] <images/FSM.png, id=119, 690.58pt x 643.40375pt>
 File: images/FSM.png Graphic file (type png)
 
 <use images/FSM.png>
-Package pdftex.def Info: images/FSM.png used on input line 168.
+Package pdftex.def Info: images/FSM.png used on input line 201.
 (pdftex.def)             Requested size: 284.52756pt x 265.09315pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 198.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 231.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 198.
- [6 <./images/FSM.png>] <images/TAPE.png, id=151, 762.85pt x 632.3625pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 231.
+ [6 <./images/FSM.png>] <images/TAPE.png, id=137, 762.85pt x 632.3625pt>
 File: images/TAPE.png Graphic file (type png)
 
 <use images/TAPE.png>
-Package pdftex.def Info: images/TAPE.png used on input line 232.
+Package pdftex.def Info: images/TAPE.png used on input line 265.
 (pdftex.def)             Requested size: 284.52756pt x 235.85202pt.
- [7 <./images/TAPE.png>]
-<images/SET-RESET-LATCH.png, id=159, 782.925pt x 441.65pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7] <images/SET-RESET-LATCH.png, id=144, 782.925pt x 441.65pt>
 File: images/SET-RESET-LATCH.png Graphic file (type png)
 
 <use images/SET-RESET-LATCH.png>
-Package pdftex.def Info: images/SET-RESET-LATCH.png used on input line 273.
+Package pdftex.def Info: images/SET-RESET-LATCH.png used on input line 306.
 (pdftex.def)             Requested size: 284.52756pt x 160.50342pt.
- [8 <./images/SET-RESET-LATCH.png>]
-<images/SIGNAL-DETECTOR.png, id=171, 782.925pt x 627.34375pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./images/TAPE.png>]
+<images/SIGNAL-DETECTOR.png, id=156, 782.925pt x 627.34375pt>
 File: images/SIGNAL-DETECTOR.png Graphic file (type png)
 
 <use images/SIGNAL-DETECTOR.png>
-Package pdftex.def Info: images/SIGNAL-DETECTOR.png used on input line 293.
+Package pdftex.def Info: images/SIGNAL-DETECTOR.png used on input line 326.
 (pdftex.def)             Requested size: 284.52756pt x 227.98781pt.
 
-<images/1GAP8.png, id=172, 782.925pt x 380.42125pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/1GAP8.png, id=157, 782.925pt x 380.42125pt>
 File: images/1GAP8.png Graphic file (type png)
  <use images/1GAP8.png>
-Package pdftex.def Info: images/1GAP8.png used on input line 303.
+Package pdftex.def Info: images/1GAP8.png used on input line 336.
 (pdftex.def)             Requested size: 284.52756pt x 138.2518pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9 <./images/SIGNAL-DETECTOR.png>]
-<images/FANOUT.png, id=179, 782.925pt x 419.5675pt>
+<images/FANOUT.png, id=158, 782.925pt x 419.5675pt>
 File: images/FANOUT.png Graphic file (type png)
  <use images/FANOUT.png>
-Package pdftex.def Info: images/FANOUT.png used on input line 321.
+Package pdftex.def Info: images/FANOUT.png used on input line 354.
 (pdftex.def)             Requested size: 284.52756pt x 152.47824pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
 
-[10 <./images/1GAP8.png> <./images/FANOUT.png>] [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
- (TexAux//report.atf.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./images/SET-RESET-LATCH.png>]
+<images/URTM-infinite.png, id=165, 726.715pt x 631.35875pt>
+File: images/URTM-infinite.png Graphic file (type png)
+
+<use images/URTM-infinite.png>
+Package pdftex.def Info: images/URTM-infinite.png used on input line 378.
+(pdftex.def)             Requested size: 284.52756pt x 247.19229pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/URTM-zoom.png, id=166, 726.715pt x 631.35875pt>
+File: images/URTM-zoom.png Graphic file (type png)
+
+<use images/URTM-zoom.png>
+Package pdftex.def Info: images/URTM-zoom.png used on input line 384.
+(pdftex.def)             Requested size: 284.52756pt x 247.19229pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./images/SIGNAL-DETECTOR.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 455.
+ [11 <./images/1GAP8.png> <./images/FANOUT.png>] [12 <./images/URTM-infinite.pn
+g> <./images/URTM-zoom.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 455.
+
+(TexAux//report.atf.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 455.
 Package rerunfilecheck Info: File `report.atf.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 392.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
  ) 
 Here is how much of TeX's memory you used:
- 10325 strings out of 493014
- 151668 string characters out of 6133351
+ 10345 strings out of 493014
+ 152096 string characters out of 6133351
  257894 words of memory out of 5000000
- 13663 multiletter control sequences out of 15000+600000
+ 13675 multiletter control sequences out of 15000+600000
  10618 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,6n,39p,935b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -673,12 +718,14 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 /local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on TexAux//report.atf.pdf (11 pages, 1861204 bytes).
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on TexAux//report.atf.pdf (12 pages, 2131971 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 200 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,6 @@
 \BOOKMARK [1][-]{section.1}{Turing Machine Structure}{}% 1
 \BOOKMARK [1][-]{section.2}{A Turing Machine in the Game of Life}{}% 2
-\BOOKMARK [1][-]{section.3}{Logic in the Game of Life}{}% 3
+\BOOKMARK [1][-]{section.3}{Computation in the Game of Life}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Spaceships}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{Spaceship Guns}{section.3}% 5
 \BOOKMARK [2][-]{subsection.3.3}{Signals}{section.3}% 6
@@ -16,3 +16,4 @@
 \BOOKMARK [3][-]{subsubsection.3.8.1}{Operation}{subsection.3.8}% 16
 \BOOKMARK [3][-]{subsubsection.3.8.2}{Components}{subsection.3.8}% 17
 \BOOKMARK [2][-]{subsection.3.9}{Miscellaneous Components}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{Universal Computation in the Game of Life}{}% 19
