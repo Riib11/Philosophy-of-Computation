@@ -108,7 +108,6 @@ Trial 1: Zulu -> Hungarian -> Nepali -> Sinhala -> Greek
 Trial 2: Nepali -> Hungarian -> Greek -> Sinhala -> Zulu
 Trial 3: Nepali -> Sinhala -> Zulu -> Greek -> Hungarian
 Trial 4: Sinhala -> Greek -> Nepali -> Zulu -> Hungarian
-
 Trial 5: Hungarian -> Greek -> Sinhala -> Zulu -> Nepali
 
 #### Predictions
