@@ -26,25 +26,18 @@ T5. Mariam-Webster English Dictionary, definition of Abdicate
 
 ### Translation task
 
-Given a sequence of languages $L_0, \dots, L_n$ and a transcript in language $L_0$, called the _original transcript_. GT translates the $L_0$-transcript to $L_1$, and then translates the resulting $L_1$-transcript to $L_2$, and so on until the transcript has been translated to $L_n$. At the end, there is left a $L_n$-transcript. Then, GT translates this $L_n$-transcript back to $L_0$, and the resulting transcript is the called _processes transcript_. The differences between the original and processed transcripts are measured to rate GT's success at this task. GT's goal is to preserve the meaning of the original transcript while following grammatical rules.
+Start with a sequence of languages $L_0, \dots, L_n$ and a transcript in $L_0$, called the _original transcript_.
+GT translates the $L_0$-transcript to $L_1$, and then translates the resulting $L_1$-transcript to $L_2$, and so on until the transcript has been translated to $L_n$.
+At the end, there is left a $L_n$-transcript.
+Then, GT translates this $L_n$-transcript back to $L_0$ - the result is the _processes transcript_.
+The differences between the original and processed transcripts are measured to rate GT's success at this task.
+The goal of this scoring is to rate GT according to how well it preserve the meaning and grammatic structure of the original transcript.
 
 ### Translation Success Measure
 
-I rate GT's success at the task by how close the processed transcript is the the original transcript in meaning and how well-constructed the processed transcript is. I rate in the following enumerated classes:
-  (S1)  impossibly-confused grammar with no meaning
-  (S2)  impossibly-confused grammar with irrelevant meaning
-  (S3)  highly-confused grammar with irrelevant meaning
-  (S4)  highly-confused grammar with somewhat-relevant meaning
-  (S5)  somewhat-confused grammar with somewhat-relevant meaning
-  (S6)  somewhat-confused grammar with relevant meaning
-  (S7)  slightly-confused grammar with relevant meaning
-  (S8)  slightly-confused grammar with accurate meaning
-  (S9)  passing grammar with accurate meaning
-  (S10) passing grammar with perfect meaning
-  (S11) perfect grammar with perfect meaning
+I rate GT's success at the task by how close the processed transcript is the the original transcript in terms of meaning and grammar. For each of these dimensions, I categorized an ordered ranking system.
 
-I divide the success metric of the processed transcript into two measures: grammar and meaning.
-**Grammar** is how properly-constructed the processed transcript is according to the rules of $L_0$.
+**Grammar** is how properly-constructed the processed transcript is according to the rules of $L_0$ and the grammatical structure of the original transcript.
   (G1) impossibly-confused
   (G2) highly-confused
   (G3) somewhat-confused
