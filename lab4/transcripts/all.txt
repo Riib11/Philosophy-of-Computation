@@ -16,7 +16,15 @@ To surrender or relinquish, as sovereign power; to withdraw
 definitely from filling or exercising, as a high office, station,
 dignity; as, to abdicate the throne, the crown, the papacy.
 
-To provide a polypeptide having ceramidase activity, and a gene encoding thereof useful as an reagent for lipid engineering and as indices for diagnosis of atopic dermatitis, an easy method for detecting the polypeptide and method for detecting the gene as well as a method for detecting atopic dermatitis. A polypeptide having an amino acid sequence as shown in SEQ ID NO: 1 in Sequence Listing, or a polypeptide having an amino acid sequence which has substitution, deletion, addition or insertion of one or more amino acids in the amino acid sequence of SEQ ID NO: 1 and having ceramidase activity; a gene encoding the polypeptide; a gene capable of hybridizing with the above genes under stringent conditions, and encoding a polypeptide having ceramidase activity; an oligonucleotide probe or primer, which is capable of hybridizing under stringent conditions with the above genes or with a gene having a nucleotide sequence complementary thereto; a method for detecting a gene encoding a polypeptide having ceramidase activity, by using the oligonucleotide probe and/or primer; an antibody or a fragment thereof, which is capable of specifically binding to the polypeptide; a method for detecting a polypeptide having ceramidase activity, by using the above antibody or fragment thereof; a method for detecting atopic dermatitis, by the methods. 
+To provide a polypeptide having ceramidase activity, and a gene encoding thereof useful as an reagent for lipid engineering and as indices for diagnosis of atopic dermatitis, an easy method for detecting the polypeptide and method for detecting the gene as well as a method for detecting atopic dermatitis.
+A polypeptide having an amino acid sequence as shown in SEQ ID NO: 1 in Sequence Listing, or a polypeptide having an amino acid sequence which has substitution, deletion, addition or insertion of one or more amino acids in the amino acid sequence of SEQ ID NO: 1 and having ceramidase activity;
+a gene encoding the polypeptide;
+a gene capable of hybridizing with the above genes under stringent conditions, and encoding a polypeptide having ceramidase activity;
+an oligonucleotide probe or primer, which is capable of hybridizing under stringent conditions with the above genes or with a gene having a nucleotide sequence complementary thereto;
+a method for detecting a gene encoding a polypeptide having ceramidase activity, by using the oligonucleotide probe and/or primer;
+an antibody or a fragment thereof, which is capable of specifically binding to the polypeptide;
+a method for detecting a polypeptide having ceramidase activity, by using the above antibody or fragment thereof;
+a method for detecting atopic dermatitis, by the methods. 
 
 My liege, this haste was hot in question,
 And many limits of the charge set down

@@ -36,10 +36,10 @@ I selected transcript sections that reflect a variety of writing styles, includi
 Transcripts:
 \begin{enumerate}
   \item[T1.] The Bible, Genesis
-  \item[T2.] Bedau's patentsample.txt
-  \item[T3.] Shakespeare's Henry IV, Part 1
-  \item[T4.] Melville's Moby Dick, Chapter 1
-  \item[T5.] Mariam-Webster English Dictionary, definition of Abdicate
+  \item[T2.] Melville's Moby Dick, Chapter 1
+  \item[T3.] Mariam-Webster English Dictionary, definition of Abdicate
+  \item[T4.] Bedau's patentsample.txt
+  \item[T5.] Shakespeare's Henry IV, Part 1
 \end{enumerate}
 
 \section{Translation task}
@@ -56,38 +56,40 @@ The goal of this scoring is to rate GT according to how well it preserve the mea
 \section{Translation Success Measure}
 
 
-I rate GT's success at the task by how close the processed transcript is the the original transcript in terms of meaning and grammar. For each of these dimensions, I categorized an ordered ranking system.
+I rated GT's success at the task by how close the processed transcript was to the original transcript in terms of meaning and grammar. For each of these dimensions, I categorized an ranking of ordered performance classes.
 
 
 
 
 \textbf{Grammar} is how properly-constructed the processed transcript is according to the rules of $L_0$ and the grammatical structure of the original transcript.
-The following are the grammar classes I used in order of increasing success.
-\begin{enumerate}
-  \item[G1.] completely confused
-  \item[G2.] mostly confused
-  \item[G3.] often confused
-  \item[G4.] sparsely confused
-  \item[G5.] passing
-  \item[G5.] perfect
-\end{enumerate}
+The following are the classes of grammar performance I partitioned in order of increasing success.
+They are meant to be ``evenly spaced'' in the space of deviations from the exact grammar and structure of the original transcript.
+\begin{align*} \begin{array}{r|l}
+\text{Grammar Class} & \text{Description} \\ \hline
+G1 & \text{completely confused} \\
+G2 & \text{mostly confused} \\
+G3 & \text{often confused} \\
+G4 & \text{sparsely confused} \\
+G5 & \text{effectively perfect}
+\end{array} \end{align*}
 
 
 
 
 \textbf{Meaning} is how close the processed transcript is to the original transcript in meaning.
-The following are the grammar classes I used in order of increasing success.
-\begin{enumerate}
-  \item[M1.] no meaning
-  \item[M2.] irrelevant
-  \item[M3.] sparsely relevant
-  \item[M4.] often relevant
-  \item[M5.] mostly accurate
-  \item[M6.] perfect
-\end{enumerate}
+The following are the classes of meaning performance I partitioned in order of increasing success.
+They are meant to be ``evenly spaced'' in the space of deviations from reflecting the exact meaning of the original transcript.
+\begin{align*} \begin{array}{r|l}
+\text{Meaning Class} & \text{Description} \\ \hline
+  M1 & \text{irrelevant} \\
+  M2 & \text{sparsely relevant} \\
+  M3 & \text{often relevant} \\
+  M4 & \text{mostly accurate} \\
+  M5 & \text{effectively perfect} \\
+\end{array} \end{align*}
 
 
-\section{Experiment 1: Well-Documented Language Translation Ring}\subsection{Language Setup}
+\section{Experiment 1: Translation Ring with Well-Documented Languages}\subsection{Language Setup}
 
 
 I selected from the top 5 languages (without English) by native speaker count . I hypothesized that this would correlate with the amount of effort that Google has put into training translations to and from these languages, which should yield more coherent and thus easier-to-score processed texts from this task.
@@ -118,7 +120,13 @@ I ran each transcript through the following trials, where the selected languages
 \end{enumerate}
 
 
-\subsection{Predictions}\subsection{Results}\subsection{Analysis}\section{Experiment 2: Under-Documented Language Translation Ring}\subsection{Language Setup}
+\subsection{Predictions}
+
+
+I predicted that GT will perform better on translating these languages than it w
+
+
+\subsection{Results}\subsection{Analysis}\section{Experiment 2: Under-Documented Language Translation Ring}\subsection{Language Setup}
 
 
 I selected from the bottom 5 languages by native speakers that Google Translate supports .
