@@ -88,11 +88,11 @@ The following are the classes of grammar performance I partitioned in order of i
 They are meant to be ``evenly spaced'' in the space of deviations from the exact grammar and structure of the original transcript.
 \\begin{align*} \\begin{array}{r\|l}
 \\text{Grammar Class} & \\text{Description} \\\\ \\hline
-G1 & \\text{completely confused} \\\\
-G2 & \\text{mostly confused} \\\\
-G3 & \\text{often confused} \\\\
-G4 & \\text{sparsely confused} \\\\
-G5 & \\text{effectively perfect}
+1 & \\text{completely confused} \\\\
+2 & \\text{mostly confused} \\\\
+3 & \\text{often confused} \\\\
+4 & \\text{sparsely confused} \\\\
+5 & \\text{effectively perfect}
 \\end{array} \\end{align*}
 |>
 
@@ -102,12 +102,33 @@ The following are the classes of meaning performance I partitioned in order of i
 They are meant to be ``evenly spaced'' in the space of deviations from reflecting the exact meaning of the original transcript.
 \\begin{align*} \\begin{array}{r\|l}
 \\text{Meaning Class} & \\text{Description} \\\\ \\hline
-  M1 & \\text{irrelevant} \\\\
-  M2 & \\text{sparsely relevant} \\\\
-  M3 & \\text{often relevant} \\\\
-  M4 & \\text{mostly accurate} \\\\
-  M5 & \\text{effectively perfect} \\\\
+1 & \\text{irrelevant} \\\\
+2 & \\text{sparsely relevant} \\\\
+3 & \\text{often relevant} \\\\
+4 & \\text{mostly accurate} \\\\
+5 & \\text{effectively perfect} \\\\
 \\end{array} \\end{align*}
+|>
+
+<|p
+The <|*|Euclidean Total|>, $E$ is a combination of the grammar and meaning scores according the Euclidean distance formula:
+<|$$
+  E(g,m) := \sqrt{(5-g)^2 + (5-m)^2}
+|>
+The motivation for this score is the conception of the grammar and meaning scores as being measures along orthogonal feature axes. So, the distance in this 2D space from $(0,0)$ represents how far from the perfect translation the processed transcript is. A lower $E$ indicates a better translation. The assumption that the grammar and meaning axes are orthogonal is likely false, but it is a useful approximation.
+|>
+
+<|#|Predictions|>
+
+<|--
+I hypothesized that this would correlate with the amount of effort that Google has put into training translations to and from these languages, which should yield more coherent and thus easier-to-score processed texts from this task.
+|>
+
+<|p
+In regards to language speaker counts, I hypothesized that GT will perform better on these languages than the languages in Experiment 2 because I assume that (1) having more native speakers correlates with having more training data for GT's algorithms, and (2) having more data to train on yields a more accurate GT in the ways measured by this experiment. Assumption 1 seems very likely in general, but assumption 2 maybe depends heavily on how exactly GT works and whether it actually works well at all.
+|>
+<|p
+In regards to transcript style, I hypothesized that GT will perform better the more technical and less artsy the transcript. For example, I think that it will not well-maintain neither the grammatical structure nor meaning of the Shakespeare prose because it contains analogies and uncommon grammatic structures.
 |>
 
 <|-------------------------------------------------------------------------------------------------------------------------|>
@@ -117,37 +138,28 @@ They are meant to be ``evenly spaced'' in the space of deviations from reflectin
 <|##|Language Setup|>
 
 <|p
-I selected from the top 5 languages (without English) by native speaker count <|-- TODO: citation |>.  The following are the languages used in this experiment in order of decreasing native speakers count: Chinese (simplified), Spanish, Hindi, Arabic, Portuguese.
+I selected from the top 5 languages (without English) by native speaker count. <|-- TODO: citation |>  The following are the languages used in this experiment in order of decreasing native speakers count: Chinese (simplified), Spanish, Hindi, Arabic, Portuguese.
 |>
 
+\\newpage
 <|##|Experimental Design|>
 
 <|p
 I ran each transcript through the following trials, where the selected languages and their order was chose randomly:
 \\begin{enumerate}
-  \\item[] Trial 1: Chinese $\\rightarrow$ Arabic $\\rightarrow$ Spanish $\\rightarrow$ Portuguese $\\rightarrow$ Hindi
-  \\item[] Trial 2: Hindi $\\rightarrow$ Chinese $\\rightarrow$ Portuguese $\\rightarrow$ Arabic $\\rightarrow$ Spanish
-  \\item[] Trial 3: Hindi $\\rightarrow$ Spanish $\\rightarrow$ Arabic $\\rightarrow$ Chinese $\\rightarrow$ Portuguese
-  \\item[] Trial 4: Chinese $\\rightarrow$ Arabic $\\rightarrow$ Spanish $\\rightarrow$ Portuguese $\\rightarrow$ Hindi
-  \\item[] Trial 5: Arabic $\\rightarrow$ Chinese $\\rightarrow$ Portuguese $\\rightarrow$ Spanish $\\rightarrow$ Hindi
+\\item[] Trial 1: Chinese $\\rightarrow$ Arabic $\\rightarrow$ Spanish $\\rightarrow$ Portuguese $\\rightarrow$ Hindi
+\\item[] Trial 2: Hindi $\\rightarrow$ Chinese $\\rightarrow$ Portuguese $\\rightarrow$ Arabic $\\rightarrow$ Spanish
+\\item[] Trial 3: Hindi $\\rightarrow$ Spanish $\\rightarrow$ Arabic $\\rightarrow$ Chinese $\\rightarrow$ Portuguese
+\\item[] Trial 4: Chinese $\\rightarrow$ Arabic $\\rightarrow$ Spanish $\\rightarrow$ Portuguese $\\rightarrow$ Hindi
+\\item[] Trial 5: Arabic $\\rightarrow$ Chinese $\\rightarrow$ Portuguese $\\rightarrow$ Spanish $\\rightarrow$ Hindi
 \\end{enumerate}
 |>
 
-<|##|Predictions|>
-
-<|--
-I hypothesized that this would correlate with the amount of effort that Google has put into training translations to and from these languages, which should yield more coherent and thus easier-to-score processed texts from this task.
-|>
-
-<|p
-I hypothesized that GT will perform better on these languages than the languages in Experiment 2 because I assume that (1) having more native speakers correlates with having more training data for GT's algorithms, and (2) having more data to train on yields a more accurate GT in the ways measured by this experiment. Assumption 1 seems very likely in general, but assumption 2 maybe depends heavily on how exactly GT works and whether it actually works well at all.
-|>
-
+<|-- \\newpage |>
 <|##|Results|>
-<|-- TODO |>
-
-<|##|Analysis|>
-<|-- TODO |>
+<|image|exp1-results-table.png|>
+<|image|exp1-results-chart.png|>
+<|-- TODO: cite an appendix that contains raw data? |>
 
 
 <|-------------------------------------------------------------------------------------------------------------------------|>
@@ -160,6 +172,7 @@ I hypothesized that GT will perform better on these languages than the languages
 I selected from the bottom 5 languages by native speaker count that Google Translate supports <|-- TODO: citation |>. The following are the languages used in this experiment in order of decreasing native speaker count: Nepali, Sinhala, Greek, Hungarian, Zulu.
 |>
 
+\\newpage
 <|##|Experimental Design|>
 
 <|p
@@ -167,20 +180,28 @@ I ran each transcript through the following trials, where the selected languages
 |>
 
 \\begin{enumerate}
-  \\item[] Trial 1: Zulu $\\rightarrow$ Hungarian $\\rightarrow$ Nepali $\\rightarrow$ Sinhala $\\rightarrow$ Greek
-  \\item[] Trial 2: Nepali $\\rightarrow$ Hungarian $\\rightarrow$ Greek $\\rightarrow$ Sinhala $\\rightarrow$ Zulu
-  \\item[] Trial 3: Nepali $\\rightarrow$ Sinhala $\\rightarrow$ Zulu $\\rightarrow$ Greek $\\rightarrow$ Hungarian
-  \\item[] Trial 4: Sinhala $\\rightarrow$ Greek $\\rightarrow$ Nepali $\\rightarrow$ Zulu $\\rightarrow$ Hungarian
-  \\item[] Trial 5: Hungarian $\\rightarrow$ Greek $\\rightarrow$ Sinhala $\\rightarrow$ Zulu $\\rightarrow$ Nepali
+\\item[] Trial 1: Zulu $\\rightarrow$ Hungarian $\\rightarrow$ Nepali $\\rightarrow$ Sinhala $\\rightarrow$ Greek
+\\item[] Trial 2: Nepali $\\rightarrow$ Hungarian $\\rightarrow$ Greek $\\rightarrow$ Sinhala $\\rightarrow$ Zulu
+\\item[] Trial 3: Nepali $\\rightarrow$ Sinhala $\\rightarrow$ Zulu $\\rightarrow$ Greek $\\rightarrow$ Hungarian
+\\item[] Trial 4: Sinhala $\\rightarrow$ Greek $\\rightarrow$ Nepali $\\rightarrow$ Zulu $\\rightarrow$ Hungarian
+\\item[] Trial 5: Hungarian $\\rightarrow$ Greek $\\rightarrow$ Sinhala $\\rightarrow$ Zulu $\\rightarrow$ Nepali
 \\end{enumerate}
 
-<|##|Predictions|>
-<|-- TODO |>
-
+<|-- \\newpage |>
 <|##|Results|>
-<|-- TODO |>
+<|image|exp2-results-table.png|>
+<|image|exp2-results-chart.png|>
+<|-- TODO: cite an appendix that contains raw data? |>
 
-<|##|Analysis|>
+
+<|-------------------------------------------------------------------------------------------------------------------------|>
+<|-------------------------------------------------------------------------------------------------------------------------|>
+<|#|Analysis|>
+
+<|##|Comparing Languages|>
+
+<|##|Comparing Transcripts|>
+
 <|-- TODO |>
 
 

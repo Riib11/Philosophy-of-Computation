@@ -3,7 +3,7 @@ filetype tex
 root True *
 <|
 \\documentclass{article}
-\\usepackage[margin=1.4in]{geometry}
+\\usepackage[margin=1.0in]{geometry}
 \\usepackage{color}
 \\usepackage{caption}
 \\usepackage{hyperref}
@@ -84,7 +84,7 @@ image True 2
 <|
 \\begin{figure}[h]
 \\centering
-\\includegraphics[height=8cm,keepaspectratio]{images/$1}
+\\includegraphics[width=15cm,keepaspectratio]{images/$1}
 \\end{figure}
 |>
 
@@ -92,7 +92,7 @@ image True 1
 <|
 \\begin{figure}[h]
 \\centering
-\\includegraphics[width=16cm,keepaspectratio]{$1}
+\\includegraphics[width=15cm,keepaspectratio]{$1}
 \\end{figure}
 |>
 
@@ -100,7 +100,7 @@ figure True 2
 <|
 \\begin{figure}[h]
 \\centering
-\\includegraphics[width=10cm,keepaspectratio]{images/$1}
+\\includegraphics[width=15cm,keepaspectratio]{images/$1}
 \\captionsetup{labelformat=empty} \\caption{$2}
 \\end{figure}
 |>

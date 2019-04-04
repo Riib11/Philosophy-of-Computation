@@ -1,6 +1,6 @@
 
 \documentclass{article}
-\usepackage[margin=1.4in]{geometry}
+\usepackage[margin=1.0in]{geometry}
 \usepackage{color}
 \usepackage{caption}
 \usepackage{hyperref}
@@ -66,11 +66,11 @@ The following are the classes of grammar performance I partitioned in order of i
 They are meant to be ``evenly spaced'' in the space of deviations from the exact grammar and structure of the original transcript.
 \begin{align*} \begin{array}{r|l}
 \text{Grammar Class} & \text{Description} \\ \hline
-G1 & \text{completely confused} \\
-G2 & \text{mostly confused} \\
-G3 & \text{often confused} \\
-G4 & \text{sparsely confused} \\
-G5 & \text{effectively perfect}
+1 & \text{completely confused} \\
+2 & \text{mostly confused} \\
+3 & \text{often confused} \\
+4 & \text{sparsely confused} \\
+5 & \text{effectively perfect}
 \end{array} \end{align*}
 
 
@@ -81,69 +81,67 @@ The following are the classes of meaning performance I partitioned in order of i
 They are meant to be ``evenly spaced'' in the space of deviations from reflecting the exact meaning of the original transcript.
 \begin{align*} \begin{array}{r|l}
 \text{Meaning Class} & \text{Description} \\ \hline
-  M1 & \text{irrelevant} \\
-  M2 & \text{sparsely relevant} \\
-  M3 & \text{often relevant} \\
-  M4 & \text{mostly accurate} \\
-  M5 & \text{effectively perfect} \\
+1 & \text{irrelevant} \\
+2 & \text{sparsely relevant} \\
+3 & \text{often relevant} \\
+4 & \text{mostly accurate} \\
+5 & \text{effectively perfect} \\
 \end{array} \end{align*}
+
+
+\section{Predictions}
+
+
+In regards to language speaker counts, I hypothesized that GT will perform better on these languages than the languages in Experiment 2 because I assume that (1) having more native speakers correlates with having more training data for GT's algorithms, and (2) having more data to train on yields a more accurate GT in the ways measured by this experiment. Assumption 1 seems very likely in general, but assumption 2 maybe depends heavily on how exactly GT works and whether it actually works well at all.
+
+
+
+
+
+In regards to transcript style, I hypothesized that GT will perform better the more technical and less artsy the transcript. For example, I think that it will not well-maintain neither the grammatical structure nor meaning of the Shakespeare prose because it contains analogies and uncommon grammatic structures.
 
 
 \section{Experiment 1: Translation Ring with Well-Documented Languages}\subsection{Language Setup}
 
 
-I selected from the top 5 languages (without English) by native speaker count . I hypothesized that this would correlate with the amount of effort that Google has put into training translations to and from these languages, which should yield more coherent and thus easier-to-score processed texts from this task.
+I selected from the top 5 languages (without English) by native speaker count.   The following are the languages used in this experiment in order of decreasing native speakers count: Chinese (simplified), Spanish, Hindi, Arabic, Portuguese.
 
 
 
 
-\vspace{1em} \noindent
-The following are the languages used in this experiment in order of decreasing native speakers count:
-\begin{enumerate}
-  \item[L1.] Chinese (simplified)
-  \item[L2.] Spanish
-  \item[L3.] Hindi
-  \item[L4.] Arabic
-  \item[L5.] Portuguese
-\end{enumerate}
-
+\newpage
 \subsection{Experimental Design}
 
 
 I ran each transcript through the following trials, where the selected languages and their order was chose randomly:
 \begin{enumerate}
-  \item[] Trial 1: Chinese $\rightarrow$ Arabic $\rightarrow$ Spanish $\rightarrow$ Portuguese $\rightarrow$ Hindi
-  \item[] Trial 2: Hindi $\rightarrow$ Chinese $\rightarrow$ Portuguese $\rightarrow$ Arabic $\rightarrow$ Spanish
-  \item[] Trial 3: Hindi $\rightarrow$ Spanish $\rightarrow$ Arabic $\rightarrow$ Chinese $\rightarrow$ Portuguese
-  \item[] Trial 4: Chinese $\rightarrow$ Arabic $\rightarrow$ Spanish $\rightarrow$ Portuguese $\rightarrow$ Hindi
-  \item[] Trial 5: Arabic $\rightarrow$ Chinese $\rightarrow$ Portuguese $\rightarrow$ Spanish $\rightarrow$ Hindi
+\item[] Trial 1: Chinese $\rightarrow$ Arabic $\rightarrow$ Spanish $\rightarrow$ Portuguese $\rightarrow$ Hindi
+\item[] Trial 2: Hindi $\rightarrow$ Chinese $\rightarrow$ Portuguese $\rightarrow$ Arabic $\rightarrow$ Spanish
+\item[] Trial 3: Hindi $\rightarrow$ Spanish $\rightarrow$ Arabic $\rightarrow$ Chinese $\rightarrow$ Portuguese
+\item[] Trial 4: Chinese $\rightarrow$ Arabic $\rightarrow$ Spanish $\rightarrow$ Portuguese $\rightarrow$ Hindi
+\item[] Trial 5: Arabic $\rightarrow$ Chinese $\rightarrow$ Portuguese $\rightarrow$ Spanish $\rightarrow$ Hindi
 \end{enumerate}
 
 
-\subsection{Predictions}
+\subsection{Results}
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm,keepaspectratio]{images/exp1-results-table.png}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm,keepaspectratio]{images/exp1-results-chart.png}
+\end{figure}
+\section{Experiment 2: Under-Documented Language Translation Ring}\subsection{Language Setup}
 
 
-I predicted that GT will perform better on translating these languages than it w
-
-
-\subsection{Results}\subsection{Analysis}\section{Experiment 2: Under-Documented Language Translation Ring}\subsection{Language Setup}
-
-
-I selected from the bottom 5 languages by native speakers that Google Translate supports .
+I selected from the bottom 5 languages by native speaker count that Google Translate supports . The following are the languages used in this experiment in order of decreasing native speaker count: Nepali, Sinhala, Greek, Hungarian, Zulu.
 
 
 
 
-\vspace{1em} \noindent
-Languages:
-\begin{enumerate}
-  \item[L1.] Nepali
-  \item[L2.] Sinhala
-  \item[L3.] Greek
-  \item[L4.] Hungarian
-  \item[L5.] Zulu
-\end{enumerate}
-
+\newpage
 \subsection{Experimental Design}
 
 
@@ -153,14 +151,24 @@ I ran each transcript through the following trials, where the selected languages
 
 
 \begin{enumerate}
-  \item[] Trial 1: Zulu $\rightarrow$ Hungarian $\rightarrow$ Nepali $\rightarrow$ Sinhala $\rightarrow$ Greek
-  \item[] Trial 2: Nepali $\rightarrow$ Hungarian $\rightarrow$ Greek $\rightarrow$ Sinhala $\rightarrow$ Zulu
-  \item[] Trial 3: Nepali $\rightarrow$ Sinhala $\rightarrow$ Zulu $\rightarrow$ Greek $\rightarrow$ Hungarian
-  \item[] Trial 4: Sinhala $\rightarrow$ Greek $\rightarrow$ Nepali $\rightarrow$ Zulu $\rightarrow$ Hungarian
-  \item[] Trial 5: Hungarian $\rightarrow$ Greek $\rightarrow$ Sinhala $\rightarrow$ Zulu $\rightarrow$ Nepali
+\item[] Trial 1: Zulu $\rightarrow$ Hungarian $\rightarrow$ Nepali $\rightarrow$ Sinhala $\rightarrow$ Greek
+\item[] Trial 2: Nepali $\rightarrow$ Hungarian $\rightarrow$ Greek $\rightarrow$ Sinhala $\rightarrow$ Zulu
+\item[] Trial 3: Nepali $\rightarrow$ Sinhala $\rightarrow$ Zulu $\rightarrow$ Greek $\rightarrow$ Hungarian
+\item[] Trial 4: Sinhala $\rightarrow$ Greek $\rightarrow$ Nepali $\rightarrow$ Zulu $\rightarrow$ Hungarian
+\item[] Trial 5: Hungarian $\rightarrow$ Greek $\rightarrow$ Sinhala $\rightarrow$ Zulu $\rightarrow$ Nepali
 \end{enumerate}
 
-\subsection{Predictions}\subsection{Results}\subsection{Analysis}\section{Conclusion}
+\subsection{Results}
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm,keepaspectratio]{images/exp2-results-table.png}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm,keepaspectratio]{images/exp2-results-chart.png}
+\end{figure}
+\section{Analysis}\section{Conclusion}
 
 
 
