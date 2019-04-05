@@ -14,6 +14,7 @@ root True *
 \\usepackage{changepage}
 \\usepackage{alg}
 \\usepackage{graphicx}
+\\usepackage{grffile}
 \\graphicspath{ {./} }
 \\usepackage{listings}
 \\lstset{aboveskip=3mm, belowskip=3mm, showstringspaces=false, columns=flexible, basicstyle={\\small\\ttfamily}, numbers=none, breaklines=true, breakatwhitespace=true, tabsize=3}
@@ -23,6 +24,8 @@ root True *
 \\catcode`\\_\\active
 
 \\newcommand{\\define}[1]{{\\sc Definition.} \\textbf{#1}: }
+% \\newcommand{\\forcenewpage}{\\clearpage \\newpage \\mbox{~} \\clearpage \\newpage}
+\\newcommand{\\forcenewpage}{\\clearpage \\newpage}
 
 \\begin{document}
 |>

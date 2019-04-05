@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 APR 2019 11:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 APR 2019 20:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,6 +350,13 @@ Package graphics Info: Driver file: pdftex.def on input line 96.
 \Gin@req@height=\dimen134
 \Gin@req@width=\dimen135
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grffile.sty
+Package: grffile 2016/05/16 v1.17 Extended file name support for graphics (HO)
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count127
 \lst@gtempboxa=\box31
@@ -466,20 +473,20 @@ Package csquotes Info: ... none found.
 (TexAux//report.atf.aux)
 \openout1 = `report.atf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -535,7 +542,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 24.
+Package hyperref Info: Link coloring OFF on input line 27.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -544,9 +551,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
-LaTeX Info: Redefining \nameref on input line 24.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 
 (TexAux//report.atf.out) (TexAux//report.atf.out)
 \@outlinefile=\write3
@@ -573,67 +580,176 @@ e
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] <images/exp1-results-table.png, id=84, 756.8275pt x 336.25626pt>
+[2] <images/exp1-results-table.png, id=156, 756.8275pt x 309.155pt>
 File: images/exp1-results-table.png Graphic file (type png)
 
 <use images/exp1-results-table.png>
-Package pdftex.def Info: images/exp1-results-table.png used on input line 129.
-(pdftex.def)             Requested size: 426.79134pt x 189.62085pt.
+Package pdftex.def Info: images/exp1-results-table.png used on input line 168.
+(pdftex.def)             Requested size: 426.79134pt x 174.33797pt.
 
-<images/exp1-results-chart.png, id=86, 756.8275pt x 388.45125pt>
+<images/exp1-results-chart.png, id=158, 756.8275pt x 389.455pt>
 File: images/exp1-results-chart.png Graphic file (type png)
 
 <use images/exp1-results-chart.png>
-Package pdftex.def Info: images/exp1-results-chart.png used on input line 134.
-(pdftex.def)             Requested size: 426.79134pt x 219.05452pt.
- [3 <./images/exp1-results-table.png> <./images/exp1-results-chart.png>] [4]
-<images/exp2-results-table.png, id=100, 756.8275pt x 336.25626pt>
+Package pdftex.def Info: images/exp1-results-chart.png used on input line 174.
+(pdftex.def)             Requested size: 426.79134pt x 219.62054pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/exp2-results-table.png, id=159, 756.8275pt x 314.17375pt>
 File: images/exp2-results-table.png Graphic file (type png)
 
 <use images/exp2-results-table.png>
-Package pdftex.def Info: images/exp2-results-table.png used on input line 164.
-(pdftex.def)             Requested size: 426.79134pt x 189.62085pt.
-
-<images/exp2-results-chart.png, id=101, 756.8275pt x 388.45125pt>
+Package pdftex.def Info: images/exp2-results-table.png used on input line 214.
+(pdftex.def)             Requested size: 426.79134pt x 177.16812pt.
+ [3 <./images/exp1-results-table.png>]
+<images/exp2-results-chart.png, id=166, 756.8275pt x 381.425pt>
 File: images/exp2-results-chart.png Graphic file (type png)
 
 <use images/exp2-results-chart.png>
-Package pdftex.def Info: images/exp2-results-chart.png used on input line 169.
-(pdftex.def)             Requested size: 426.79134pt x 219.05452pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
- [5 <./images/exp2-results-table.png> <./images/exp2-results-chart.png>] [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
- (TexAux//report.atf.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
+Package pdftex.def Info: images/exp2-results-chart.png used on input line 220.
+(pdftex.def)             Requested size: 426.79134pt x 215.09229pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./images/exp1-results-chart.png> <./images/exp2-results-table.png>]
+[5 <./images/exp2-results-chart.png>]
+<images/lang-diffs-all-table.png, id=182, 756.8275pt x 194.7275pt>
+File: images/lang-diffs-all-table.png Graphic file (type png)
+
+<use images/lang-diffs-all-table.png>
+Package pdftex.def Info: images/lang-diffs-all-table.png used on input line 235
+.
+(pdftex.def)             Requested size: 426.79134pt x 109.81026pt.
+
+<images/lang-diffs-grammar-meaning-chart.png, id=183, 756.8275pt x 387.4475pt>
+File: images/lang-diffs-grammar-meaning-chart.png Graphic file (type png)
+
+<use images/lang-diffs-grammar-meaning-chart.png>
+Package pdftex.def Info: images/lang-diffs-grammar-meaning-chart.png used on in
+put line 259.
+(pdftex.def)             Requested size: 426.79134pt x 218.4885pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/lang-diffs-euclid-chart.png, id=184, 756.8275pt x 415.5525pt>
+File: images/lang-diffs-euclid-chart.png Graphic file (type png)
+
+<use images/lang-diffs-euclid-chart.png>
+Package pdftex.def Info: images/lang-diffs-euclid-chart.png used on input line 
+265.
+(pdftex.def)             Requested size: 426.79134pt x 234.3374pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/trans-diffs-all-table.png, id=185, 756.8275pt x 202.7575pt>
+File: images/trans-diffs-all-table.png Graphic file (type png)
+
+<use images/trans-diffs-all-table.png>
+Package pdftex.def Info: images/trans-diffs-all-table.png used on input line 29
+3.
+(pdftex.def)             Requested size: 426.79134pt x 114.33853pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+<images/trans-diffs-grammar-meaning-chart.png, id=186, 756.8275pt x 415.5525pt>
+File: images/trans-diffs-grammar-meaning-chart.png Graphic file (type png)
+<use images/trans-diffs-grammar-meaning-chart.png>
+Package pdftex.def Info: images/trans-diffs-grammar-meaning-chart.png used on i
+nput line 299.
+(pdftex.def)             Requested size: 426.79134pt x 234.3374pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/trans-diffs-euclid-chart.png, id=187, 756.8275pt x 415.5525pt>
+File: images/trans-diffs-euclid-chart.png Graphic file (type png)
+
+<use images/trans-diffs-euclid-chart.png>
+Package pdftex.def Info: images/trans-diffs-euclid-chart.png used on input line
+ 305.
+(pdftex.def)             Requested size: 426.79134pt x 234.3374pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6
+
+ <./images/lang-diffs-all-table.png>] [7 <./images/lang-diffs-grammar-meaning-c
+hart.png>] [8 <./images/lang-diffs-euclid-chart.png> <./images/trans-diffs-all-
+table.png>] [9 <./images/trans-diffs-grammar-meaning-chart.png> <./images/trans
+-diffs-euclid-chart.png>] [10
+
+]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no ™ in font cmbx12!
+Missing character: There is no ç in font cmr10!
+Missing character: There is no — in font cmr10!
+Missing character: There is no £ in font cmr10!
+ [11] [12]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no ™ in font cmbx12!
+ [13] [14]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¦ in font cmr10!
+Missing character: There is no á in font cmr10!
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¦ in font cmr10!
+Missing character: There is no á in font cmr10!
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no ™ in font cmbx12!
+ [15] [16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 881.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 881.
+
+(TexAux//report.atf.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 881.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 881.
 Package rerunfilecheck Info: File `report.atf.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 881.
  ) 
 Here is how much of TeX's memory you used:
- 10255 strings out of 493014
- 150707 string characters out of 6133351
- 257855 words of memory out of 5000000
- 13630 multiletter control sequences out of 15000+600000
- 11225 words of font info for 45 fonts, out of 8000000 for 9000
+ 10440 strings out of 493014
+ 154138 string characters out of 6133351
+ 262282 words of memory out of 5000000
+ 13731 multiletter control sequences out of 15000+600000
+ 10618 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,15n,38p,935b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,39p,1385b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on TexAux//report.atf.pdf (6 pages, 229792 bytes).
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on TexAux//report.atf.pdf (17 pages, 441091 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 316 compressed objects within 4 object streams
+ 116 named destinations out of 1000 (max. 500000)
+ 315 words of extra memory for PDF output out of 10000 (max. 10000000)
 
