@@ -1,7 +1,7 @@
-model_name = 'black-white-model'
-training_data_dir = 'blackwhite'
-testing_data_dir = 'blackwhite'
+model_name = 'square-triangle-model'
+training_data_dir = 'square-triangle'
+testing_data_dir = 'square-triangle'
 
-img_size        = 10
+img_size        = 50
 num_channels    = 3
 num_iterations  = 100

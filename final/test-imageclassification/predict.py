@@ -8,7 +8,6 @@ from constants import *
 dir_path = os.path.dirname(os.path.realpath(__file__))
 image_path=sys.argv[1]
 filename = dir_path +'/' +image_path
-img_size=10
 images = []
 # Reading the image using OpenCV
 image = cv2.imread(filename)

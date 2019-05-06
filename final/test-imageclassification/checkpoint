@@ -1,2 +1,2 @@
-model_checkpoint_path: "black-white-model"
-all_model_checkpoint_paths: "black-white-model"
+model_checkpoint_path: "square-triangle-model"
+all_model_checkpoint_paths: "square-triangle-model"
