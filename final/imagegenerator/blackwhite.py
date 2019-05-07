@@ -4,16 +4,19 @@ blackwhite_dir = "blackwhite/"
 black_dir = blackwhite_dir + "black/"
 white_dir = blackwhite_dir + "white/"
 
-n = 100
+n = 1000
 
-size = (10, 10)
+size = (28, 28)
 imgtype = 'PNG'
-mode = 'RGB'
 
-color = {
-    'black': (0,0,0),
-    'white': (255,255,255)
-}
+# mode = 'RGB'
+# color = {
+#     'black': (0,0,0),
+#     'white': (255,255,255)
+# }
+
+mode = '1'
+color = { 'black':0, 'white':1 }
 
 def create_solid(color, dir, suffix):
     img = Image.new(mode, size, color)
