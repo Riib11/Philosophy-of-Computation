@@ -5,16 +5,19 @@ import random
 from tqdm import tqdm
 random.seed(1)
 
-parent_dir    = "reflected-random/"
+parent_dir    = "reflected-random_RGB/"
 reflected_dir = parent_dir + "reflected/"
 random_dir    = parent_dir + "random/"
 
 n = 1000
 size = (28, 28)
 imgtype = 'PNG'
-mode = '1'
 
-color = { 'black': 0, 'white': 1 }
+# mode = '1'
+# color = { 'black': 0, 'white': 1 }
+
+mode = 'RGB'
+color = { 'black': (0,0,0), 'white': (255,255,255) }
 
 background_color = color['white']
 

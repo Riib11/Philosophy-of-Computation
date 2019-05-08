@@ -17,7 +17,8 @@ set_random_seed(2)
 batch_size = 32
 
 # Prepare input data
-classes = os.listdir(training_data_dir)
+classes = [ fn for fn in os.listdir(training_data_dir) if fn != ".DS_Store" ]
+print(classes)
 num_classes = len(classes)
 
 # 20% of the data will automatically be used for validation
@@ -41,8 +42,6 @@ x = tf.placeholder(tf.float32, shape=[None, img_size,img_size,num_channels], nam
 y_true = tf.placeholder(tf.float32, shape=[None, num_classes], name='y_true')
 y_true_cls = tf.argmax(y_true, dimension=1)
 
-
-
 ##Network graph params
 filter_size_conv1 = 3
 num_filters_conv1 = 32
@@ -54,6 +53,8 @@ filter_size_conv3 = 3
 num_filters_conv3 = 64
 
 fc_layer_size = 128
+
+
 
 def create_weights(shape):
     return tf.Variable(tf.truncated_normal(shape, stddev=0.05))
