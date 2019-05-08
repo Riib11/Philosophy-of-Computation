@@ -6,17 +6,21 @@
 
 ## Experiments
 
-### Experiment 1: Black-White
+Training data is 1000 images per class.
+The CNN is allowed 2000 iterations for training.
+The GAN is allowed *TODO* iterations for training.
+
+### Experiment 1: Solid Color
 
 Each image filled completely _black_ or _white_.
-The task is to classify the image.
 
 Both the CNN and the GAN reach 100% performance.
+- CNN: Training Epoch 40 --- Training Accuracy: 100.0%, Validation Accuracy: 100.0%,
+- GAN:
 
 ### Experiment 2: Square-Triangle
 
 Each image has either a _square_ or a _triangle_.
-The task is to classify image.
 
 Both the CNN and the GAN reach 100% performance.
 
@@ -34,14 +38,14 @@ Both the CNN and the GAN reach 100% performance.
 ### Experiment 4: Same-Different
 
 Each image contains two black-filled polygons with between 4-5 points, placed at random (no-overlapping) locations.
-(TODO: is this a good range of points? I tried with 3-10 already but only with the CNN, need to test with GAN also)
+(*TODO*: is this a good range of points? I tried with 3-10 already but only with the CNN, need to test with GAN also)
 The _same_ images have both of their polygons the same, but at different rotations.
 The _different_ images have different polygons.
 
 The CNN fails:
 Training Epoch 40 --- Training Accuracy:  78.1%, Validation Accuracy:  59.4%,  Validation Loss: 0.755
 
-The GAN TODO.
+The GAN *TODO*.
 
 This experiment in particular seems to be a good deciding case of my hypothesis. The GAN is more likely to latch onto the higher-level pattern if I'm correct in my hypothesis.
 Of course, there could be first-order patterns to latch onto as well, but the fact that the CNN fails yields this less likely.
