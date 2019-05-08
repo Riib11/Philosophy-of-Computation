@@ -10,10 +10,7 @@ size = (28, 28)
 imgtype = 'PNG'
 
 # mode = 'RGB'
-# color = {
-#     'black': (0,0,0),
-#     'white': (255,255,255)
-# }
+# color = { 'black':(0,0,0), 'white':(255,255,255) }
 
 mode = '1'
 color = { 'black':0, 'white':1 }

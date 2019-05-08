@@ -5,17 +5,18 @@ import random
 from tqdm import tqdm
 random.seed(1)
 
+# parent_dir    = "same-different/"
 parent_dir    = "same-different_RGB/"
 same_dir      = parent_dir + "same/"
 different_dir = parent_dir + "different/"
 
-n = 10
-size = (28, 28)
+n       = 10
+size    = (28, 28)
 imgtype = 'PNG'
-mode = 'RGB'
+mode    = 'RGB'
 
-if mode == 'RGB': color = { 'black': (0,0,0), 'white': (255,255,255) }
-elif mode == '1': color = { 'black': 0, 'white': 1 }
+if   mode == 'RGB' : color = { 'black':(0,0,0), 'white':(255,255,255) }
+elif mode == '1'   : color = { 'black':0,       'white':1 }
 
 background_color = color['white']
 
@@ -45,7 +46,7 @@ def compose(fs):
 
 shape_radius = 7
 shape_radius_min = 2
-shape_points_range = range(4,5+1)
+shape_points_range = range(4, 5+1)
 
 center = (size[0]//2, size[1]//2)
 

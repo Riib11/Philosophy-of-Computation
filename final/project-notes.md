@@ -6,13 +6,19 @@
 
 ## Experiments
 
-### Experiment 1: Black-White
+### Experiment 1A: Black-White
 
 Each image filled completely _black_ or _white_.
 The task is to classify the image.
 
-The CNN reaches 100% performance within the allotted (1000) iterations.
-The GAN reaches 100% performance withing the allotted (TODO: how many?) iterations.
+Both the CNN and the GAN reach 100% performance.
+
+### Experiment 1B: Square-Triangle
+
+Each image has either a _square_ or a _triangle_.
+The task is to classify image.
+
+Both the CNN and the GAN reach 100% performance.
 
 ### Experiment 2: Reflection-Random
 
