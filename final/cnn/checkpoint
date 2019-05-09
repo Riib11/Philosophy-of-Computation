@@ -1,2 +1,2 @@
-model_checkpoint_path: "solid-color_RGB-model"
-all_model_checkpoint_paths: "solid-color_RGB-model"
+model_checkpoint_path: "matching_RGB-model"
+all_model_checkpoint_paths: "matching_RGB-model"
