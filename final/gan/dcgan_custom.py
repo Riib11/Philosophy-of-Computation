@@ -224,20 +224,18 @@ class CUSTOM_DCGAN(object):
             print(log_mesg)
             if save_interval>0:
                 if (i+1)%save_interval==0:
-                    self.plot_images(save2file=True, samples=noise_input.shape[0],\
-                        noise=noise_input, step=(i+1))
+                    self.plot_images(save2file=True, fake=True, samples=noise_input.shape[0], noise=noise_input, step=(i+1))
 
-    def plot_images(self, save2file, fake, samples, noise, step=0):
+    def plot_images(self, save2file, fake, samples, noise, step=None):
         attributes = {
-                  'name': self.name,
-            'iterations': self.iterations,
              'batchsize': self.batchsize,
               'realness': 'fake' if fake else 'real',
                'samples': samples,
-                  'step': step
+                  'step': step if not step is None else self.iterations,
+                 'noise': 'some' if not noise is None else 'none'
         }
 
-        filename = '_'.join([ '%s=%s' % (k,v) for (k,v) in attributes.items() ])
+        filename = self.name + '_' + '_'.join([ '%s=%s' % (k,v) for (k,v) in attributes.items() ])
 
         # choose images
         if fake:
@@ -269,9 +267,9 @@ if __name__ == '__main__':
     custom_dcgan = CUSTOM_DCGAN("solidcolor_1")
 
     timer = ElapsedTimer()
-    custom_dcgan.train(iterations=1, batchsize=32, save_interval=500)
+    custom_dcgan.train(iterations=1000, batchsize=32, save_interval=5)
     # custom_dcgan.train(iterations=10000, batchsize=256, save_interval=500)
     timer.elapsed_time()
 
-    custom_dcgan.plot_images(save2file=True,  fake=True, samples=16, noise=None)
-    custom_dcgan.plot_images(save2file=False, fake=True, samples=16, noise=None)
+    custom_dcgan.plot_images(save2file=True, fake=True,  samples=16, noise=None)
+    custom_dcgan.plot_images(save2file=True, fake=False, samples=16, noise=None)
