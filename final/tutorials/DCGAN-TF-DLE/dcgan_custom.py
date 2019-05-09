@@ -269,7 +269,7 @@ if __name__ == '__main__':
     custom_dcgan = CUSTOM_DCGAN("solidcolor_1")
 
     timer = ElapsedTimer()
-    custom_dcgan.train(iterations=1, batchsize=32, save_interval=500)
+    custom_dcgan.train(iterations=2000, batchsize=32, save_interval=500)
     # custom_dcgan.train(iterations=10000, batchsize=256, save_interval=500)
     timer.elapsed_time()
 

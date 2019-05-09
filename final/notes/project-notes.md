@@ -42,17 +42,62 @@ The promise of neural networks is that they can begin to grasp higher-order patt
 And indeed, in principal, this is possible.
 The problem in not necessarily with the network design themselves, but the training process.
 I suspect that what most often happens is that the successive layers act more as buffers for noise is the previous layers rather than capturing higher-level patterns (although I recognize these behaviors are not mutually exclusive).
+Even in the case of facial recognition, the algorithms still importantly require the faces to be in mostly the same orientation and position in the input layer (image pixels).
+As I've also mentioned, higher order patterns can be explicitly suggested to the CNN by including them as variations in the data (e.g. the rotated images for image classification).
+But this runs up against the classical issues with symbolic programming, where rather than programming the algorithm itself you are trying to program the training data.
+If the classifier doesn't recognize rotations, train with rotations the training data.
+If the classifier doesn't recognize reflections, train with reflections the training data.
+If the classifier doesn't recognize x of the data, train with x-applied versions of the training data.
+But you can't usually take into account, or it isn't feasible to take into account, all the desired higher-order patterns.
 
+So, my first hypothesis is that CNNs take advantage of first-order patterns and get stuck in local minima and that this is caused by the natural structuring of input data that allows for x-order patterns to be ranked by difficultly with increasing x.
+
+Now, consider a very different setup for machine learning, still with CNNs but with a different training process.
+TODO: define GAN
+
+The GAN's structure is exactly a response to the kind of scrutiny that reveals the superficialness of CNN 'understanding'.
+My second hypothesis is that GANs can circumvent a single CNNs tendency to get stuck in first-order patterns by using this CNN fault against itself.
+If the GAN's discriminator learns some first-order pattern, as it is likely to try to do first (as first-order patterns are easiest by my first hypothesis), then it is also just as easy for the GAN's generator to learn this pattern.
+If both learn the pattern, the generator will consistently fool the discriminator because it can easily mimic the first-order pattern in its fakes.
+So, the discriminator will have to either learn a different first-order pattern or learn a higher-order pattern.
+Ideally, this game of cat-and-mouse will have the generator chasing the discriminator around to different first-order patterns until eventually the discriminator learns some higher-order pattern.
+In the worst case, there are enough different first-order patterns that the chase never breaches into anything higher than first-order, since neither the discriminator nor the generator can remember all the first-order patterns tried so far, and thus they are never exhausted. However in simple case studies where there are not many such first-order patterns, this chase should result in high-order patterns more consistently.
+In human terms, the generator is automating the job that we were previously doing by coming up with adversarial examples that tricked the classifier.
+By taking this input into account, the classifier produced by the GAN's training (its discriminator) will be able to weight these adversarial examples more appropriately, because their frequency in its training will increase as it gets better and better at recognizing real examples.
 
 
 ## Experimental Design
 
 The task is to compare the performance of two approaches to machine-learned image classification.
-The two approaches are convolutional neural network (CNN) and generative adversarial neural network.
+I want to test a range of classification tasks and see where and how the CNN and GAN begin to plateau in performance.
 
-One of these is noticing patterns of matching shapes in images.
-I want to see at what point the typical algorithm, the CNN, begins to fail at classification.
+The tasks are recognizing class A (versus class B):
+1. solid black (versus solid white)
+2. reflected over horizontal (versus random, not reflected)
+3. triangle (versus square)
+4. two of the same shape (versus two of different shapes)
 
+I chose these tasks because 1-2 seem like good benchmarks for close-to-perfect performance (to see how many iteration and how large a data set I should allow for training), and 3-4 seem to be good for testing some higher-order patterns (esp. 4) that Melanie mentioned are notoriously difficult.
+
+For training the CNN, a set of 60% of the given images are designated as the training set and the rest 40% of the given images are designated as the validation set.
+The training set is for supervised learning, the validation set is for unsupervised learning (so the CNN doesn't overfit).
+The CNN trains each iteration via the following steps:
+1. The CNN predicts the class of a randomly chosen image from the training set.
+2. The CNN receives a score based on its accuracy, and adjusts its weights appropriately.
+3. The CNN predicts the classes, in sequence, of all the images in the validation set.
+4. The CNN receives an overall score for its accuracy, and adjusts its weights appropriately.
+
+
+For training the GAN, all the given images are designated as the training set.
+The role of the validation set will be played by the generator.
+The discriminator and generator train simultaneously.
+The GAN trains each iteration via the following steps:
+1. An image is randomly chosen to be either randomly selected from the training set, or generated by the generator (which is fed a random noise vector as input).
+2. The discriminator predicts the class of the image.
+3. The discriminator receives a score based on its accuracy and the generator receives the inverse score (how well it fooled the discriminator).
+4. The discriminator and generator adjust their weights appropriately.
+
+Note that the competition between the discriminator and generator is strictly zero-sum.
 
 ## Experiments
 
@@ -68,15 +113,9 @@ The GAN is allowed *TODO* iterations for training.
 
 Each image filled completely _black_ or _white_.
 
-Both the CNN and the GAN reach 100% performance.
-- CNN: Training Epoch 40 --- Training Accuracy: 100.0%, Validation Accuracy: 100.0%,
-- GAN:
-
 ### Experiment 2: Square-Triangle
 
 Each image has either a _square_ or a _triangle_.
-
-Both the CNN and the GAN reach 100% performance.
 
 ### Experiment 3: Reflection-Random
 
@@ -87,19 +126,12 @@ The heights of the rectangles are chosen at random.
 The _reflected_ images have the same pattern of rectangles in the top half reflected exactly down to the bottom half.
 The _random_ images have different patterns of rectangles in top and bottom halves.
 
-Both the CNN and the GAN reach 100% performance.
-
 ### Experiment 4: Same-Different
 
 Each image contains two black-filled polygons with between 4-5 points, placed at random (no-overlapping) locations.
 (*TODO*: is this a good range of points? I tried with 3-10 already but only with the CNN, need to test with GAN also)
 The _same_ images have both of their polygons the same, but at different rotations.
 The _different_ images have different polygons.
-
-The CNN fails:
-Training Epoch 40 --- Training Accuracy:  78.1%, Validation Accuracy:  59.4%,  Validation Loss: 0.755
-
-The GAN *TODO*.
 
 This experiment in particular seems to be a good deciding case of my hypothesis. The GAN is more likely to latch onto the higher-level pattern if I'm correct in my hypothesis.
 Of course, there could be first-order patterns to latch onto as well, but the fact that the CNN fails yields this less likely.
