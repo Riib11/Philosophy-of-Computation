@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 MAY 2019 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 MAY 2019 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -85,18 +85,18 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -192,60 +192,187 @@ e
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (2.16174pt too wide) in paragraph at lines 53--55
+Overfull \hbox (2.16174pt too wide) in paragraph at lines 63--65
 []\OT1/cmr/m/n/10 A sim-ple and likely ex-pla-na-tion for the CNN's be-hav-ior 
 that ac-counts for its pattern-obliviousness
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 69.
+(Font)              <7> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 69.
+(Font)              <5> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 69.
+(Font)              <8> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 69.
+(Font)              <6> on input line 79.
 [2] [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 166.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 176.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 176.
 
-[5] <./images/cnn-results.png, id=30, 462.528pt x 346.896pt>
+[5] [6] <./images/cnn-results.png, id=33, 462.528pt x 346.896pt>
 File: ./images/cnn-results.png Graphic file (type png)
 
 <use ./images/cnn-results.png>
-Package pdftex.def Info: ./images/cnn-results.png used on input line 185.
+Package pdftex.def Info: ./images/cnn-results.png used on input line 199.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
- [6 <./images/cnn-results.png>] [7] (./report.aux) ) 
+ [7 <./images/cnn-results.png>]
+<./images/gan-results.png, id=40, 462.528pt x 346.896pt>
+File: ./images/gan-results.png Graphic file (type png)
+
+<use ./images/gan-results.png>
+Package pdftex.def Info: ./images/gan-results.png used on input line 212.
+(pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
+ [8 <./images/gan-results.png>]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(0.0pt, 614.295pt, 0.0pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=614.295pt
+* \textheight=681.15898pt
+* \oddsidemargin=-72.26999pt
+* \evensidemargin=-72.26999pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+<./images/gan-sample-fake-solidcolor.png, id=45, 722.7pt x 722.7pt>
+File: ./images/gan-sample-fake-solidcolor.png Graphic file (type png)
+
+<use ./images/gan-sample-fake-solidcolor.png>
+Package pdftex.def Info: ./images/gan-sample-fake-solidcolor.png used on input 
+line 229.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+<./images/gan-sample-real-solidcolor.png, id=46, 722.7pt x 722.7pt>
+File: ./images/gan-sample-real-solidcolor.png Graphic file (type png)
+
+<use ./images/gan-sample-real-solidcolor.png>
+Package pdftex.def Info: ./images/gan-sample-real-solidcolor.png used on input 
+line 231.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+
+LaTeX Warning: Float too large for page by 6.26288pt on input line 232.
+
+[9 <./images/gan-sample-fake-solidcolor.png> <./images/gan-sample-real-solidcol
+or.png>] <./images/gan-sample-fake-reflection.png, id=52, 722.7pt x 722.7pt>
+File: ./images/gan-sample-fake-reflection.png Graphic file (type png)
+
+<use ./images/gan-sample-fake-reflection.png>
+Package pdftex.def Info: ./images/gan-sample-fake-reflection.png used on input 
+line 238.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+<./images/gan-sample-real-reflection.png, id=53, 722.7pt x 722.7pt>
+File: ./images/gan-sample-real-reflection.png Graphic file (type png)
+
+<use ./images/gan-sample-real-reflection.png>
+Package pdftex.def Info: ./images/gan-sample-real-reflection.png used on input 
+line 240.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+
+LaTeX Warning: Float too large for page by 6.26288pt on input line 241.
+
+[10 <./images/gan-sample-fake-reflection.png> <./images/gan-sample-real-reflect
+ion.png>] <./images/gan-sample-fake-simpleshape.png, id=59, 722.7pt x 722.7pt>
+File: ./images/gan-sample-fake-simpleshape.png Graphic file (type png)
+
+<use ./images/gan-sample-fake-simpleshape.png>
+Package pdftex.def Info: ./images/gan-sample-fake-simpleshape.png used on input
+ line 247.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+<./images/gan-sample-real-simpleshape.png, id=60, 722.7pt x 722.7pt>
+File: ./images/gan-sample-real-simpleshape.png Graphic file (type png)
+
+<use ./images/gan-sample-real-simpleshape.png>
+Package pdftex.def Info: ./images/gan-sample-real-simpleshape.png used on input
+ line 249.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+
+LaTeX Warning: Float too large for page by 6.26288pt on input line 250.
+
+[11 <./images/gan-sample-fake-simpleshape.png> <./images/gan-sample-real-simple
+shape.png>] <./images/gan-sample-fake-matching.png, id=66, 722.7pt x 722.7pt>
+File: ./images/gan-sample-fake-matching.png Graphic file (type png)
+
+<use ./images/gan-sample-fake-matching.png>
+Package pdftex.def Info: ./images/gan-sample-fake-matching.png used on input li
+ne 256.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+<./images/gan-sample-real-matching.png, id=67, 722.7pt x 722.7pt>
+File: ./images/gan-sample-real-matching.png Graphic file (type png)
+
+<use ./images/gan-sample-real-matching.png>
+Package pdftex.def Info: ./images/gan-sample-real-matching.png used on input li
+ne 258.
+(pdftex.def)             Requested size: 331.233pt x 331.23871pt.
+
+
+LaTeX Warning: Float too large for page by 6.26288pt on input line 259.
+
+[12 <./images/gan-sample-fake-matching.png> <./images/gan-sample-real-matching.
+png>] [13
+
+
+
+
+
+
+] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1988 strings out of 493014
- 28926 string characters out of 6133351
- 98349 words of memory out of 5000000
- 5523 multiletter control sequences out of 15000+600000
+ 2042 strings out of 493014
+ 30864 string characters out of 6133351
+ 98493 words of memory out of 5000000
+ 5568 multiletter control sequences out of 15000+600000
  7980 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,23p,1102b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti8.pfb>
-Output written on report.pdf (7 pages, 187610 bytes).
+ 37i,8n,23p,1102b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on report.pdf (13 pages, 447157 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,6 +4,16 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
 
 \renewcommand{\bf}{\textbf}
 \renewcommand{\it}{\textit}
@@ -166,31 +176,91 @@ Tasks III and IV were chosen as more difficult to test the limits of both AIs, e
 For each task, the CNN was trained with a set of 2000 original images with 1000 for each class.
 60\% of the images were designated as the \it{training set} and 40\% were designated as the \it{validation set}.
 The CNN trains by a combination of supervized and unsupervized learning: each iteration, the CNN trains first on a single image from the training set and recieves the incorrectness score of its classification, and then second on the whole of the validation set and recieves a cumulative score for its classification on all of it.
+The CNN was allowed 2000 training iterations.
 
 \item
 For each task, the GAN was trained with a set of 1000 original images (all from class A of the task). The role of the validation set is played by the generator.
 Each iteration, the disciminator is trained on either an image from the original images or the generator. Then the discriminator and generator are appropriately updated.
+The GAn was allowed 1000 training iterations (twice as many as the CNN because the GAN trains two CNNs at once).
 \end{itemize}
 
-
+\newpage
 \section{Results}
+
+Each \it{epoch} is a batch of 40 training iterations.
 
 \subsection{CNN Results}
 
-Each \it{epoch} is a batch of 50 training iterations.
 The \it{valdidation accuracy} is the accuracy of the CNN classification predictions on the validation set (the standard measure).
 
 \begin{figure}[ht]
+\label{fig:cnn-results}
 \centering
 \includegraphics[width=\textwidth]{cnn-results.png}
+\caption{Tracking the CNN's accuracy on the validation set througout training.}
 \end{figure}
+
+\newpage
 
 \subsection{GAN Results}
 
+\subsubsection{GAN Discriminator Accuracy}
+
+\begin{figure}[ht]
+\label{fig:gan-results}
+\centering
+\includegraphics[width=\textwidth]{gan-results.png}
+\caption{Tracking the GAN's discriminator's accuracy throughout training.}
+\end{figure}
+
+\subsubsection{GAN Generated Samples}
+
+Some samples from the fully-trained generator of the GAN are presented in the following several pages, alongside a sample of images from the original data set.
+The generator takes as input a random vector so that it does not create the same image always.
+The top $4 \times 4$ grid holds constant the random vectors used to create each sample.
+The bottom grid is of the real samples from the original data set.
 
 
-% TODO
+\clearpage
+\newgeometry{left=0cm,right=0cm,bottom=2cm,top=2cm}
+\begin{figure}[ht]
+\label{fig:gan-samples-solidcolor}
+\centering
+\includegraphics[height=330px]{gan-sample-fake-solidcolor.png}
+\caption{}
+\includegraphics[height=330px]{gan-sample-real-solidcolor.png}
+\end{figure}
 
+\clearpage
+\begin{figure}[ht]
+\label{fig:gan-samples-reflection}
+\centering
+\includegraphics[height=330px]{gan-sample-fake-reflection.png}
+\caption{}
+\includegraphics[height=330px]{gan-sample-real-reflection.png}
+\end{figure}
+
+\clearpage
+\begin{figure}[ht]
+\label{fig:gan-samples-simpleshape}
+\centering
+\includegraphics[height=330px]{gan-sample-fake-simpleshape.png}
+\caption{}
+\includegraphics[height=330px]{gan-sample-real-simpleshape.png}
+\end{figure}
+
+\clearpage
+\begin{figure}[ht]
+\label{fig:gan-samples-matching}
+\centering
+\includegraphics[height=330px]{gan-sample-fake-matching.png}
+\caption{}
+\includegraphics[height=330px]{gan-sample-real-matching.png}
+\end{figure}
+
+\restoregeometry
+
+\newpage
 \section{Conclusions}
 
 There were some obvious shortcomings to this setup for comparing a CNN and a GAN.
