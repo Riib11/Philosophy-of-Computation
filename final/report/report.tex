@@ -243,23 +243,35 @@ Each \it{epoch} is a batch of 40 training iterations.
 The \it{valdidation accuracy} is the accuracy of the CNN classification predictions on the validation set (the standard measure).
 
 \begin{figure}[ht]
-\label{fig:cnn-results}
+\label{fig:cnn-validation-results}
 \centering
-\tmpincludegraphics[width=\textwidth]{cnn-results.png}
+\tmpincludegraphics[width=\textwidth]{cnn-validation-results.png}
 \caption{Tracking the CNN's accuracy on the validation set througout training.}
+\end{figure}
+
+\begin{figure}[ht]
+\label{fig:cnn-training-results}
+\centering
+\tmpincludegraphics[width=\textwidth]{cnn-training-results.png}
+\caption{Tracking the CNN's accuracy on the training set througout training.}
 \end{figure}
 
 \newpage
 
 \subsection{GAN Results}
 
-\subsubsection{GAN Discriminator Accuracy}
-
 \begin{figure}[ht]
-\label{fig:gan-results}
+\label{fig:gan-discriminator-results}
 \centering
 \tmpincludegraphics[width=\textwidth]{gan-results.png}
-\caption{Tracking the GAN's discriminator's accuracy throughout training.}
+\caption{Tracking the GAN's discriminator accuracy throughout training.}
+\end{figure}
+
+\begin{figure}[ht]
+\label{fig:gan-generator-results}
+\centering
+\tmpincludegraphics[width=\textwidth]{gan-results.png}
+\caption{Tracking the GAN's generator accuracy throughout training.}
 \end{figure}
 
 \subsubsection{GAN Generated Samples}
@@ -324,8 +336,19 @@ The bottom grid is of the real samples from the original data set.
 
 The CNN performed very well on the first three tasks, reaching perfect predictions on the vaidation set in under 15 epochs.
 On the last task, \it{matching}, it did not reach a stable configuration even after 40 epochs.
-Figure~\ref{fig:cnn-results} illustrates how it's validation performance bounced around 0.5 during the entire training process, never gaining an edge.
+Figure~\ref{fig:cnn-validation-results} illustrates how it's validation performance bounced around 0.5 during the entire training process, never gaining an edge.
+As expected, this supports the claim that the CNN had trouble learning the higher-order pattern necessary for recognizing matching shapes.
+Interestingly, the CNN's performance on the training set differed importantly on task IV.
+While its accuracy on the validation set stayed constant, its accuracy on the validation set slowly creeped up to 0.75 by epoch 40.
+This suggests that the CNN was learning some cheaty lower-order pattern that applied to the specific 2000 images in the training data set.
+While this didn't help it on the validation set, it still had incentive to use the cheat on the training set.
+% TODO: reference this later to talk about how this shows that it will find a local maximima without every getting up to a better higher-order pattern
 
+The GAN's results, on the other hand, are little harder to interpret.
+The discriminator accuracy measure for the GAN is not analagous to the validation accuracy measure for the CNN because the discriminator accuraccy is the ratio of how competent the GAN's discriminator compared to the GAN's generator.
+So regardless of how well the discriminator ended up doing in absolute terms (in analogy to the CNN's validation accuracy), a more or less even competition between the discriminator and generator was expected.
+
+Afer around 5 epochs, the discriminator accuracy flatlines.
 
 \section{Conclusions}
 

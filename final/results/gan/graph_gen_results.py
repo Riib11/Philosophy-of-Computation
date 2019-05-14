@@ -12,6 +12,7 @@ def parse_percent(s):
 
 # read validation accuracies
 discriminator_accuracies = []
+generator_accuracies = []
 
 experiments = ['solidcolor', 'reflection', 'simpleshape', 'matching']
 
@@ -22,17 +23,17 @@ for name in experiments:
     gen_loses = []
     gen_accus = []
     with open(fn, 'r+') as file:
-        print(fn)
         lines = [l for l in file]
         lines = lines[:1000]
         lines = [ lines[i] for i in range(0, len(lines), 50) ]
         for line in lines:
             line = line.split()
-            # dis_loses.append( float(line[3][:-1]) )
+            dis_loses.append( float(line[3][:-1]) )
             dis_accus.append( float(line[5][:-1]) )
-            # gen_loses.append( float(line[8][:-1]) )
-            # gen_accus.append( float(line[10][:-1]) )
+            gen_loses.append( float(line[8][:-1]) )
+            gen_accus.append( float(line[10][:-1]) )
     discriminator_accuracies.append((name, dis_accus))
+    generator_accuracies.append((name, gen_accus))
 
 ##############################################################################################################################
 # plot data
@@ -41,18 +42,18 @@ for name in experiments:
 fig, ax = plt.subplots()
 
 # labels
-plt.title('GAN Training Progress - Discriminator')
-plt.ylabel('discriminator accuracy')
+plt.title('GAN Training Progress - Generator')
+plt.ylabel('generator accuracy')
 plt.xlabel('epoch')
 
 # data
 step = 1
-max_i = len(discriminator_accuracies[0][1])*step
+max_i = len(generator_accuracies[0][1])*step
 epochs = np.arange(0, max_i, step)
 print(epochs)
 
-for name, dis_accus in discriminator_accuracies:
-    ax.plot(epochs, dis_accus, label=name)
+for name, gen_accus in generator_accuracies:
+    ax.plot(epochs, gen_accus, label=name)
 plt.axis([1, epochs[-1],  0, 1.05])
 
 # new_labels = epochs
