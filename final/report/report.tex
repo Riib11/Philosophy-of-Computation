@@ -18,6 +18,8 @@
 \renewcommand{\bf}{\textbf}
 \renewcommand{\it}{\textit}
 
+\newcommand{\tmpincludegraphics}[1][opt]{includegraphics: }
+
 \begin{document}
 
 \begin{center}
@@ -184,7 +186,54 @@ Each iteration, the disciminator is trained on either an image from the original
 The GAn was allowed 1000 training iterations (twice as many as the CNN because the GAN trains two CNNs at once).
 \end{itemize}
 
+\clearpage
+\newgeometry{left=0cm,right=0cm,bottom=1cm,top=1cm}
+\pagestyle{empty}
+
+\clearpage
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=100px]{solidcolor-example-A.png}
+  \hspace{100px}
+  {%
+    % \setlength{\fboxsep}{0pt}%
+    \setlength{\fboxrule}{1pt}%
+    \fbox{\includegraphics[width=100px]{solidcolor-example-B.png}}%
+  }%
+  \label{fig:solidcolor-example}
+  \caption{Task I, left: class A (solid black), right: class B (solid white)}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \tmpincludegraphics[width=100px]{reflection-example-A.png}
+  \hspace{100px}
+  \tmpincludegraphics[width=100px]{reflection-example-B.png}
+  \label{fig:reflection-example}
+  \caption{Task II, left: class A (horizontal reflection), right: class B (random). The image for class B is shown with a border that is not part of the actual image for the sake of clarity.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \tmpincludegraphics[width=100px]{simpleshape-example-A.png}
+  \hspace{100px}
+  \tmpincludegraphics[width=100px]{simpleshape-example-B.png}
+  \label{fig:simpleshape-example}
+  \caption{Task III, left: class A (square), right: class B (triangle)}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \tmpincludegraphics[width=100px]{matching-example-A.png}
+  \hspace{100px}
+  \tmpincludegraphics[width=100px]{matching-example-B.png}
+  \label{fig:matching-example}
+  \caption{Task IV, left: class A (two of the same shape), right: class B (two of different shapes)}
+\end{figure}
+
 \newpage
+\restoregeometry
+\pagestyle{plain}
 \section{Results}
 
 Each \it{epoch} is a batch of 40 training iterations.
@@ -196,7 +245,7 @@ The \it{valdidation accuracy} is the accuracy of the CNN classification predicti
 \begin{figure}[ht]
 \label{fig:cnn-results}
 \centering
-\includegraphics[width=\textwidth]{cnn-results.png}
+\tmpincludegraphics[width=\textwidth]{cnn-results.png}
 \caption{Tracking the CNN's accuracy on the validation set througout training.}
 \end{figure}
 
@@ -209,7 +258,7 @@ The \it{valdidation accuracy} is the accuracy of the CNN classification predicti
 \begin{figure}[ht]
 \label{fig:gan-results}
 \centering
-\includegraphics[width=\textwidth]{gan-results.png}
+\tmpincludegraphics[width=\textwidth]{gan-results.png}
 \caption{Tracking the GAN's discriminator's accuracy throughout training.}
 \end{figure}
 
@@ -222,45 +271,62 @@ The bottom grid is of the real samples from the original data set.
 
 
 \clearpage
-\newgeometry{left=0cm,right=0cm,bottom=2cm,top=2cm}
+\newgeometry{left=0cm,right=0cm,bottom=1cm,top=1cm}
+\thispagestyle{empty}
 \begin{figure}[ht]
 \label{fig:gan-samples-solidcolor}
 \centering
-\includegraphics[height=330px]{gan-sample-fake-solidcolor.png}
+\tmpincludegraphics[height=323px]{gan-sample-fake-solidcolor.png}
 \caption{}
-\includegraphics[height=330px]{gan-sample-real-solidcolor.png}
+\vspace{1em}
+\tmpincludegraphics[height=323px]{gan-sample-real-solidcolor.png}
 \end{figure}
 
 \clearpage
+\thispagestyle{empty}
 \begin{figure}[ht]
 \label{fig:gan-samples-reflection}
 \centering
-\includegraphics[height=330px]{gan-sample-fake-reflection.png}
+\tmpincludegraphics[height=323px]{gan-sample-fake-reflection.png}
 \caption{}
-\includegraphics[height=330px]{gan-sample-real-reflection.png}
+\vspace{1em}
+\tmpincludegraphics[height=323px]{gan-sample-real-reflection.png}
 \end{figure}
 
 \clearpage
+\thispagestyle{empty}
 \begin{figure}[ht]
 \label{fig:gan-samples-simpleshape}
 \centering
-\includegraphics[height=330px]{gan-sample-fake-simpleshape.png}
+\tmpincludegraphics[height=323px]{gan-sample-fake-simpleshape.png}
 \caption{}
-\includegraphics[height=330px]{gan-sample-real-simpleshape.png}
+\vspace{1em}
+\tmpincludegraphics[height=323px]{gan-sample-real-simpleshape.png}
 \end{figure}
 
 \clearpage
+\thispagestyle{empty}
 \begin{figure}[ht]
 \label{fig:gan-samples-matching}
 \centering
-\includegraphics[height=330px]{gan-sample-fake-matching.png}
+\tmpincludegraphics[height=323px]{gan-sample-fake-matching.png}
 \caption{}
-\includegraphics[height=330px]{gan-sample-real-matching.png}
+\vspace{1em}
+\tmpincludegraphics[height=323px]{gan-sample-real-matching.png}
 \end{figure}
 
 \restoregeometry
+\pagestyle{plain}
 
 \newpage
+
+\subsection{Results Analysis}
+
+The CNN performed very well on the first three tasks, reaching perfect predictions on the vaidation set in under 15 epochs.
+On the last task, \it{matching}, it did not reach a stable configuration even after 40 epochs.
+Figure~\ref{fig:cnn-results} illustrates how it's validation performance bounced around 0.5 during the entire training process, never gaining an edge.
+
+
 \section{Conclusions}
 
 There were some obvious shortcomings to this setup for comparing a CNN and a GAN.
