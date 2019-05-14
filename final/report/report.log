@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.9)  14 MAY 2019 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.9)  14 MAY 2019 11:29
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**report
+**report.tex
 (./report.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/article.cls
@@ -184,27 +183,27 @@ e
 )) [1
 
 {/usr/local/texlive/2019basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (2.16174pt too wide) in paragraph at lines 49--51
+Overfull \hbox (2.16174pt too wide) in paragraph at lines 51--53
 []\OT1/cmr/m/n/10 A sim-ple and likely ex-pla-na-tion for the CNN's be-hav-ior 
 that ac-counts for its pattern-obliviousness
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 65.
+(Font)              <7> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 65.
+(Font)              <5> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <8> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 65.
+(Font)              <6> on input line 67.
 [2] [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 160.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 162.
 
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 160.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 162.
 
 [5] [6]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -214,14 +213,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(0.0pt, 614.295pt, 0.0pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
+* v-part:(T,H,B)=(170.71652pt, 624.25346pt, 0.0pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=614.295pt
-* \textheight=738.0645pt
+* \textheight=624.25346pt
 * \oddsidemargin=-72.26999pt
 * \evensidemargin=-72.26999pt
-* \topmargin=-80.81725pt
+* \topmargin=61.44653pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -239,53 +238,29 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images/solidcolor-example-A.png, id=33, 28.105pt x 28.105pt>
+<./images/solidcolor-example-A.png, id=32, 28.105pt x 28.105pt>
 File: ./images/solidcolor-example-A.png Graphic file (type png)
 <use ./images/solidcolor-example-A.png>
 Package pdftex.def Info: ./images/solidcolor-example-A.png  used on input line 
-178.
+180.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
-<./images/solidcolor-example-B.png, id=34, 28.105pt x 28.105pt>
+<./images/solidcolor-example-B.png, id=33, 28.105pt x 28.105pt>
 File: ./images/solidcolor-example-B.png Graphic file (type png)
 <use ./images/solidcolor-example-B.png>
 Package pdftex.def Info: ./images/solidcolor-example-B.png  used on input line 
-183.
+185.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
-<./images/reflection-example-A.png, id=35, 28.105pt x 28.105pt>
+<./images/reflection-example-A.png, id=34, 28.105pt x 28.105pt>
 File: ./images/reflection-example-A.png Graphic file (type png)
 <use ./images/reflection-example-A.png>
 Package pdftex.def Info: ./images/reflection-example-A.png  used on input line 
-191.
+196.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
-<./images/reflection-example-B.png, id=36, 28.105pt x 28.105pt>
+<./images/reflection-example-B.png, id=35, 28.105pt x 28.105pt>
 File: ./images/reflection-example-B.png Graphic file (type png)
 <use ./images/reflection-example-B.png>
 Package pdftex.def Info: ./images/reflection-example-B.png  used on input line 
-193.
-(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
-<./images/simpleshape-example-A.png, id=37, 28.105pt x 28.105pt>
-File: ./images/simpleshape-example-A.png Graphic file (type png)
-<use ./images/simpleshape-example-A.png>
-Package pdftex.def Info: ./images/simpleshape-example-A.png  used on input line
- 200.
-(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
-<./images/simpleshape-example-B.png, id=38, 28.105pt x 28.105pt>
-File: ./images/simpleshape-example-B.png Graphic file (type png)
-<use ./images/simpleshape-example-B.png>
-Package pdftex.def Info: ./images/simpleshape-example-B.png  used on input line
- 202.
-(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
-<./images/matching-example-A.png, id=39, 28.105pt x 28.105pt>
-File: ./images/matching-example-A.png Graphic file (type png)
-<use ./images/matching-example-A.png>
-Package pdftex.def Info: ./images/matching-example-A.png  used on input line 20
-9.
-(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
-<./images/matching-example-B.png, id=40, 28.105pt x 28.105pt>
-File: ./images/matching-example-B.png Graphic file (type png)
-<use ./images/matching-example-B.png>
-Package pdftex.def Info: ./images/matching-example-B.png  used on input line 21
-1.
+198.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
  [7
 
@@ -293,36 +268,63 @@ Package pdftex.def Info: ./images/matching-example-B.png  used on input line 21
 
  <./images/solidcolor-example-A.png (PNG copy)> <./images/solidcolor-example-B.
 png (PNG copy)> <./images/reflection-example-A.png (PNG copy)> <./images/reflec
-tion-example-B.png (PNG copy)> <./images/simpleshape-example-A.png (PNG copy)> 
-<./images/simpleshape-example-B.png (PNG copy)>] [8 <./images/matching-example-
-A.png (PNG copy)> <./images/matching-example-B.png (PNG copy)>]
-<./images/cnn-validation-results.png, id=48, 462.528pt x 346.896pt>
+tion-example-B.png (PNG copy)>]
+<./images/simpleshape-example-A.png, id=40, 28.105pt x 28.105pt>
+File: ./images/simpleshape-example-A.png Graphic file (type png)
+<use ./images/simpleshape-example-A.png>
+Package pdftex.def Info: ./images/simpleshape-example-A.png  used on input line
+ 207.
+(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
+<./images/simpleshape-example-B.png, id=41, 28.105pt x 28.105pt>
+File: ./images/simpleshape-example-B.png Graphic file (type png)
+<use ./images/simpleshape-example-B.png>
+Package pdftex.def Info: ./images/simpleshape-example-B.png  used on input line
+ 209.
+(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
+<./images/matching-example-A.png, id=42, 28.105pt x 28.105pt>
+File: ./images/matching-example-A.png Graphic file (type png)
+<use ./images/matching-example-A.png>
+Package pdftex.def Info: ./images/matching-example-A.png  used on input line 21
+8.
+(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
+<./images/matching-example-B.png, id=43, 28.105pt x 28.105pt>
+File: ./images/matching-example-B.png Graphic file (type png)
+<use ./images/matching-example-B.png>
+Package pdftex.def Info: ./images/matching-example-B.png  used on input line 22
+0.
+(pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
+ [8
+
+ <./images/simpleshape-example-A.png (PNG copy)> <./images/simpleshape-example-
+B.png (PNG copy)> <./images/matching-example-A.png (PNG copy)> <./images/matchi
+ng-example-B.png (PNG copy)>]
+<./images/cnn-validation-results.png, id=47, 462.528pt x 346.896pt>
 File: ./images/cnn-validation-results.png Graphic file (type png)
 <use ./images/cnn-validation-results.png>
 Package pdftex.def Info: ./images/cnn-validation-results.png  used on input lin
-e 230.
+e 239.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
-<./images/cnn-training-results.png, id=50, 462.528pt x 346.896pt>
+<./images/cnn-training-results.png, id=49, 462.528pt x 346.896pt>
 File: ./images/cnn-training-results.png Graphic file (type png)
 <use ./images/cnn-training-results.png>
 Package pdftex.def Info: ./images/cnn-training-results.png  used on input line 
-237.
+246.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
 
 [9
 
  <./images/cnn-validation-results.png>]
-<./images/gan-discriminator-results.png, id=55, 462.528pt x 346.896pt>
+<./images/gan-discriminator-results.png, id=54, 462.528pt x 346.896pt>
 File: ./images/gan-discriminator-results.png Graphic file (type png)
 <use ./images/gan-discriminator-results.png>
 Package pdftex.def Info: ./images/gan-discriminator-results.png  used on input 
-line 248.
+line 257.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
-<./images/gan-generator-results.png, id=56, 462.528pt x 346.896pt>
+<./images/gan-generator-results.png, id=55, 462.528pt x 346.896pt>
 File: ./images/gan-generator-results.png Graphic file (type png)
 <use ./images/gan-generator-results.png>
 Package pdftex.def Info: ./images/gan-generator-results.png  used on input line
- 255.
+ 264.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
  [10 <./images/cnn-training-results.png>] [11 <./images/gan-discriminator-resul
 ts.png>] [12 <./images/gan-generator-results.png>]
@@ -358,59 +360,59 @@ ts.png>] [12 <./images/gan-generator-results.png>]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images/gan-sample-fake-solidcolor.png, id=69, 722.7pt x 722.7pt>
+<./images/gan-sample-fake-solidcolor.png, id=68, 722.7pt x 722.7pt>
 File: ./images/gan-sample-fake-solidcolor.png Graphic file (type png)
 <use ./images/gan-sample-fake-solidcolor.png>
 Package pdftex.def Info: ./images/gan-sample-fake-solidcolor.png  used on input
- line 273.
+ line 282.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
-<./images/gan-sample-real-solidcolor.png, id=70, 722.7pt x 722.7pt>
+<./images/gan-sample-real-solidcolor.png, id=69, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-solidcolor.png Graphic file (type png)
 <use ./images/gan-sample-real-solidcolor.png>
 Package pdftex.def Info: ./images/gan-sample-real-solidcolor.png  used on input
- line 276.
+ line 285.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [13 <./images/gan-sample-fake-solidcolor.png> <./images/gan-sample-real-solidc
 olor.png>]
-<./images/gan-sample-fake-reflection.png, id=77, 722.7pt x 722.7pt>
+<./images/gan-sample-fake-reflection.png, id=76, 722.7pt x 722.7pt>
 File: ./images/gan-sample-fake-reflection.png Graphic file (type png)
 <use ./images/gan-sample-fake-reflection.png>
 Package pdftex.def Info: ./images/gan-sample-fake-reflection.png  used on input
- line 284.
+ line 293.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
-<./images/gan-sample-real-reflection.png, id=78, 722.7pt x 722.7pt>
+<./images/gan-sample-real-reflection.png, id=77, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-reflection.png Graphic file (type png)
 <use ./images/gan-sample-real-reflection.png>
 Package pdftex.def Info: ./images/gan-sample-real-reflection.png  used on input
- line 287.
+ line 296.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [14 <./images/gan-sample-fake-reflection.png> <./images/gan-sample-real-reflec
 tion.png>]
-<./images/gan-sample-fake-simpleshape.png, id=84, 722.7pt x 722.7pt>
+<./images/gan-sample-fake-simpleshape.png, id=83, 722.7pt x 722.7pt>
 File: ./images/gan-sample-fake-simpleshape.png Graphic file (type png)
 <use ./images/gan-sample-fake-simpleshape.png>
 Package pdftex.def Info: ./images/gan-sample-fake-simpleshape.png  used on inpu
-t line 295.
+t line 304.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
-<./images/gan-sample-real-simpleshape.png, id=85, 722.7pt x 722.7pt>
+<./images/gan-sample-real-simpleshape.png, id=84, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-simpleshape.png Graphic file (type png)
 <use ./images/gan-sample-real-simpleshape.png>
 Package pdftex.def Info: ./images/gan-sample-real-simpleshape.png  used on inpu
-t line 298.
+t line 307.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [15 <./images/gan-sample-fake-simpleshape.png> <./images/gan-sample-real-simpl
 eshape.png>]
-<./images/gan-sample-fake-matching.png, id=91, 722.7pt x 722.7pt>
+<./images/gan-sample-fake-matching.png, id=90, 722.7pt x 722.7pt>
 File: ./images/gan-sample-fake-matching.png Graphic file (type png)
 <use ./images/gan-sample-fake-matching.png>
 Package pdftex.def Info: ./images/gan-sample-fake-matching.png  used on input l
-ine 306.
+ine 315.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
-<./images/gan-sample-real-matching.png, id=92, 722.7pt x 722.7pt>
+<./images/gan-sample-real-matching.png, id=91, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-matching.png Graphic file (type png)
 <use ./images/gan-sample-real-matching.png>
 Package pdftex.def Info: ./images/gan-sample-real-matching.png  used on input l
-ine 309.
+ine 318.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [16 <./images/gan-sample-fake-matching.png> <./images/gan-sample-real-matching
 .png>] [17
@@ -420,7 +422,7 @@ ine 309.
 
 
 
-] [18] (./report.aux) ) 
+] [18] [19] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  2054 strings out of 494060
  32639 string characters out of 6163036
@@ -428,21 +430,20 @@ Here is how much of TeX's memory you used:
  5732 multiletter control sequences out of 15000+600000
  7980 words of font info for 28 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 41i,8n,25p,1102b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019basic/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2019basic/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019basic/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019basic/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019basic/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019basic/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019basic
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019bas
-ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-9basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
-/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on report.pdf (18 pages, 753152 bytes).
+ 41i,8n,25p,1106b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019basic/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019basic/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2019basic/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019basic/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019basic/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019basic
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019bas
+ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019b
+asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on report.pdf (19 pages, 745255 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
