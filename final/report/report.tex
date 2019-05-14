@@ -4,21 +4,10 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 
-\newenvironment{changemargin}[2]{%
-\begin{list}{}{%
-\setlength{\topsep}{0pt}%
-\setlength{\leftmargin}{#1}%
-\setlength{\rightmargin}{#2}%
-\setlength{\listparindent}{\parindent}%
-\setlength{\itemindent}{\parindent}%
-\setlength{\parsep}{\parskip}%
-}%
-\item[]}{\end{list}}
-
 \renewcommand{\bf}{\textbf}
 \renewcommand{\it}{\textit}
 
-\newcommand{\tmpincludegraphics}[1][opt]{includegraphics: }
+% \newcommand{\includegraphics}[1][opt]{graphics: }
 
 \begin{document}
 
@@ -27,11 +16,6 @@
 \\[2em]
 {\large Henry Blanchette}
 \end{center}
-
-% \vspace{2em}
-% \begin{abstract}
-% % TODO
-% \end{abstract}
 
 \vspace{2em}
 
@@ -96,8 +80,6 @@ the same kind of process happens but is just slowed down and buffered by the noi
 Observe that it is not, in principal, impossible for the CNN in this example to use the deeper layers to develop abstractions e.g. one node in the 10th layer sums the number of black pixels on the left half of the image and a different node in the 10th layer sums hte number of white pixels on right half of the image.
 The key result is just that these sorts of abstractions are improbable, and more efficient weightings that do not develop such abstractions will be trained to first in the training process.
 Even in the case that there exist some more efficient higher-order abstractions, if training reaches a local maximum using low-order abstraction it is not always likely and often unlikely that the training will ever deviate towards the former.
-
-% TODO: include this in conclusions or instead here? idk, I think conclusions will be more about the actual experiment rather than my preliminary theory.
 
 This line of thinking points to a simple explanation for the \it{frame problem}.
 The frame problem is that of developing AI that is just as adept as current narrow AI but also able to apply its learned skill generally (at least, as generally as humans seem to do).
@@ -206,27 +188,27 @@ The GAn was allowed 1000 training iterations (twice as many as the CNN because t
 
 \begin{figure}[ht]
   \centering
-  \tmpincludegraphics[width=100px]{reflection-example-A.png}
+  \includegraphics[width=100px]{reflection-example-A.png}
   \hspace{100px}
-  \tmpincludegraphics[width=100px]{reflection-example-B.png}
+  \includegraphics[width=100px]{reflection-example-B.png}
   \label{fig:reflection-example}
   \caption{Task II, left: class A (horizontal reflection), right: class B (random). The image for class B is shown with a border that is not part of the actual image for the sake of clarity.}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \tmpincludegraphics[width=100px]{simpleshape-example-A.png}
+  \includegraphics[width=100px]{simpleshape-example-A.png}
   \hspace{100px}
-  \tmpincludegraphics[width=100px]{simpleshape-example-B.png}
+  \includegraphics[width=100px]{simpleshape-example-B.png}
   \label{fig:simpleshape-example}
   \caption{Task III, left: class A (square), right: class B (triangle)}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \tmpincludegraphics[width=100px]{matching-example-A.png}
+  \includegraphics[width=100px]{matching-example-A.png}
   \hspace{100px}
-  \tmpincludegraphics[width=100px]{matching-example-B.png}
+  \includegraphics[width=100px]{matching-example-B.png}
   \label{fig:matching-example}
   \caption{Task IV, left: class A (two of the same shape), right: class B (two of different shapes)}
 \end{figure}
@@ -245,14 +227,14 @@ The \it{valdidation accuracy} is the accuracy of the CNN classification predicti
 \begin{figure}[ht]
 \label{fig:cnn-validation-results}
 \centering
-\tmpincludegraphics[width=\textwidth]{cnn-validation-results.png}
+\includegraphics[width=\textwidth]{cnn-validation-results.png}
 \caption{Tracking the CNN's accuracy on the validation set througout training.}
 \end{figure}
 
 \begin{figure}[ht]
 \label{fig:cnn-training-results}
 \centering
-\tmpincludegraphics[width=\textwidth]{cnn-training-results.png}
+\includegraphics[width=\textwidth]{cnn-training-results.png}
 \caption{Tracking the CNN's accuracy on the training set througout training.}
 \end{figure}
 
@@ -263,14 +245,14 @@ The \it{valdidation accuracy} is the accuracy of the CNN classification predicti
 \begin{figure}[ht]
 \label{fig:gan-discriminator-results}
 \centering
-\tmpincludegraphics[width=\textwidth]{gan-results.png}
+\includegraphics[width=\textwidth]{gan-discriminator-results.png}
 \caption{Tracking the GAN's discriminator accuracy throughout training.}
 \end{figure}
 
 \begin{figure}[ht]
 \label{fig:gan-generator-results}
 \centering
-\tmpincludegraphics[width=\textwidth]{gan-results.png}
+\includegraphics[width=\textwidth]{gan-generator-results.png}
 \caption{Tracking the GAN's generator accuracy throughout training.}
 \end{figure}
 
@@ -288,10 +270,10 @@ The bottom grid is of the real samples from the original data set.
 \begin{figure}[ht]
 \label{fig:gan-samples-solidcolor}
 \centering
-\tmpincludegraphics[height=323px]{gan-sample-fake-solidcolor.png}
+\includegraphics[height=323px]{gan-sample-fake-solidcolor.png}
 \caption{}
 \vspace{1em}
-\tmpincludegraphics[height=323px]{gan-sample-real-solidcolor.png}
+\includegraphics[height=323px]{gan-sample-real-solidcolor.png}
 \end{figure}
 
 \clearpage
@@ -299,10 +281,10 @@ The bottom grid is of the real samples from the original data set.
 \begin{figure}[ht]
 \label{fig:gan-samples-reflection}
 \centering
-\tmpincludegraphics[height=323px]{gan-sample-fake-reflection.png}
+\includegraphics[height=323px]{gan-sample-fake-reflection.png}
 \caption{}
 \vspace{1em}
-\tmpincludegraphics[height=323px]{gan-sample-real-reflection.png}
+\includegraphics[height=323px]{gan-sample-real-reflection.png}
 \end{figure}
 
 \clearpage
@@ -310,10 +292,10 @@ The bottom grid is of the real samples from the original data set.
 \begin{figure}[ht]
 \label{fig:gan-samples-simpleshape}
 \centering
-\tmpincludegraphics[height=323px]{gan-sample-fake-simpleshape.png}
+\includegraphics[height=323px]{gan-sample-fake-simpleshape.png}
 \caption{}
 \vspace{1em}
-\tmpincludegraphics[height=323px]{gan-sample-real-simpleshape.png}
+\includegraphics[height=323px]{gan-sample-real-simpleshape.png}
 \end{figure}
 
 \clearpage
@@ -321,10 +303,10 @@ The bottom grid is of the real samples from the original data set.
 \begin{figure}[ht]
 \label{fig:gan-samples-matching}
 \centering
-\tmpincludegraphics[height=323px]{gan-sample-fake-matching.png}
+\includegraphics[height=323px]{gan-sample-fake-matching.png}
 \caption{}
 \vspace{1em}
-\tmpincludegraphics[height=323px]{gan-sample-real-matching.png}
+\includegraphics[height=323px]{gan-sample-real-matching.png}
 \end{figure}
 
 \restoregeometry
@@ -348,11 +330,17 @@ The GAN's results, on the other hand, are little harder to interpret.
 The discriminator accuracy measure for the GAN is not analagous to the validation accuracy measure for the CNN because the discriminator accuraccy is the ratio of how competent the GAN's discriminator compared to the GAN's generator.
 So regardless of how well the discriminator ended up doing in absolute terms (in analogy to the CNN's validation accuracy), a more or less even competition between the discriminator and generator was expected.
 
-Afer around 5 epochs, the discriminator accuracy flatlines.
+Figure~\ref{fig:gan-discriminator-results} shows that after ~10 epochs, the GAN's discriminator and generator accuracy flatlines for the reflection task. Looking at the generator's products in figure~\ref{fig:gan-samples-reflection}, it seems like it may have been partway towards mimicing reflection but there is clearly a ways to go.
+The matching task also begins to flatline, although briefly, after ~18 epochs.
+This not be sustaining, and looking at the generator's products it seemed like the training did not find anything extremely concrete.
+As for tasks I and III, neither seemed to have reached a productive equilibrium.
+Looking at the generator's products it seemed like the discriminator for task I (solidcolor) found a pattern of recognizing image with most of the same pixel, because the generator ended up focussing on solid white squares rather than solid black.
+For simpleshape, nothing in the generator's products indicate a good understanding of the task's pattern.
+
 
 \section{Conclusions}
 
-There were some obvious shortcomings to this setup for comparing a CNN and a GAN.
+There were some obvious shortcomings to this experiment for comparing a CNN and a GAN.
 The comparison is not apples-to-apples because the networks are designed in different ways as to require different types of inputs and present different types of outputs.
 The CNN was given access to 1000 examples of class A and 1000 examples of class B, and so was classifying between two relatively-well-structured classes.
 The GAN on the other hand was given access to just 1000 examples of class A, and the generator was expected to fill the role of providing examples of class B, and the discriminator just has to decide between class A and not class A which may not be as well-structured as class B depending on how the generator ends up looking.
@@ -361,6 +349,28 @@ Additionally, the CNN provided an exact measure of how well it classified images
 This is certainly possible, but I was not knowledgeable about Tensorflow to successfuly implement this feature.
 So, the results that I aquired are judged subjectively by how well the generator performed.
 
-% TODO: what does this say about how well GANs solve the frame problem?
+However there were still some interesting, if not maximally robust, results that related to the theory outlined in the first sections.
+The fact that CNN tended to optimize its accuracy on the training data even if it did not help its accuracy on the validation data supports the hypothesis that CNNs will optimize on lower-order patterns at the expense of potential higher-order pattern if, say, the lower-order pattern leads the CNN to some local maxima.
+Given that real-world CNNs train on vast quantities of both labeled and unlabeled data (via supervised and unsupervized learning respectively), this observation explains the frame problem.
+CNNs will only tend to learn higher-order patterns if those patterns are present in their training  (labeled) data, and not so much when it is present in the validation (unlabeled) data.
+
+As for GANs, the potential solution to this framing of the fram problem suggested by this paper, the promise was that by incorporating an adversarial-example generator into the training process, more adversarial examples that require higher-order patterns to recognize would end up being present in the GAN's training data.
+The results from the CNN/GAN comparison experiment do not heavily support this theory, but two particulr results do show promise.
+The fact that the matching and reflection tasks were relatively excelled at in comparison to the solidcolor task suggests that GAN's discriminator has trouble learning the lower-order patterns because the generator can most easily take advantage of them, as was originally intended.
+A possible extension of the work this paper presents would be to do similar experiments but with more training iterations or a different training setup (it may be that GANs take longer to train or require a work better with more finely-tuned network structure for certain kinds of inputs e.g. images) and to extract just the discriminator from the GAN in order to compare its accuracy exactly with a CNN classifier.
+
+Overall, this paper argued that the frame problem is best understood as a problem in the data and training process of AIs, rather than an inherent problem of modern AI algorithms themselves (e.g. CNNs).
+In principal, there is no reason that a CNN could not eventually learn any higher-order pattern such as the ones that humans find intuitive and immediately notice are lacking.
+The obstacle is just that the way that CNNs are typically trained is not structured in a way to give enough marginal incentive to the CNN during training such that it will learn higher-order patterns that are further away than lower-order local maxima.
+If there is not a better reason (relative to maximizing utility during training) for a CNN to learn a higher-order pattern over a lower-order one, then it won't.
+Introducing incentive to learn higher-order patterns amounts to, then, engineering the training data in such a way that training will not get stuck in local maxima.
+One way to introduce this incentive is to pit two CNNs against each, as a GAN setup does, in order to penalize a CNN that in that way abuses lower-order patterns.
+
+In closing, this does raise a final question about humans themselves.
+If many adversarial examples and so much training is required to learn higher-order concepts humans accept as universally intuitive, how do humans learn these concepts in the first place?
+The chances that humans share ``training'' during their upbringing so much as to lead to the kind of commonality in basic intuitions that are observed across the globe seems unlikely.
+So, a more likely explanation is that at least some if not many fundamental human intuitions are not learned through ``training'' i.e. life experience --- they are probrammed into the human genome in some way or another.
+In this way, it may be a more deep expectation than originally envisioned to look for human-like intuition in AIs, even in cases as simple as the intuitive physics in Breakout.
+If, perhaps, the training process that led humans to have a certain intuition are derived from ``training'' that took place over millions of years in very specific environments, then it would be something of a miracle to expect an AI to learn the same intuitions in a very differemt, limited environment.
 
 \end{document}
