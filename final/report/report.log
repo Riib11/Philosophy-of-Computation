@@ -1,8 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.9)  14 MAY 2019 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.9)  14 MAY 2019 11:37
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**report.tex
+**report
 (./report.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/article.cls
@@ -183,29 +184,29 @@ e
 )) [1
 
 {/usr/local/texlive/2019basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (2.16174pt too wide) in paragraph at lines 51--53
+Overfull \hbox (2.16174pt too wide) in paragraph at lines 53--55
 []\OT1/cmr/m/n/10 A sim-ple and likely ex-pla-na-tion for the CNN's be-hav-ior 
 that ac-counts for its pattern-obliviousness
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 67.
+(Font)              <7> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 67.
+(Font)              <5> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 67.
+(Font)              <8> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 67.
-[2] [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 162.
+(Font)              <6> on input line 69.
+[2] [3] [4] [5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 164.
 
- (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 162.
-
-[5] [6]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 164.
+ [6]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -242,25 +243,25 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 File: ./images/solidcolor-example-A.png Graphic file (type png)
 <use ./images/solidcolor-example-A.png>
 Package pdftex.def Info: ./images/solidcolor-example-A.png  used on input line 
-180.
+182.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
 <./images/solidcolor-example-B.png, id=33, 28.105pt x 28.105pt>
 File: ./images/solidcolor-example-B.png Graphic file (type png)
 <use ./images/solidcolor-example-B.png>
 Package pdftex.def Info: ./images/solidcolor-example-B.png  used on input line 
-185.
+187.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
 <./images/reflection-example-A.png, id=34, 28.105pt x 28.105pt>
 File: ./images/reflection-example-A.png Graphic file (type png)
 <use ./images/reflection-example-A.png>
 Package pdftex.def Info: ./images/reflection-example-A.png  used on input line 
-196.
+198.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
 <./images/reflection-example-B.png, id=35, 28.105pt x 28.105pt>
 File: ./images/reflection-example-B.png Graphic file (type png)
 <use ./images/reflection-example-B.png>
 Package pdftex.def Info: ./images/reflection-example-B.png  used on input line 
-198.
+200.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
  [7
 
@@ -273,25 +274,25 @@ tion-example-B.png (PNG copy)>]
 File: ./images/simpleshape-example-A.png Graphic file (type png)
 <use ./images/simpleshape-example-A.png>
 Package pdftex.def Info: ./images/simpleshape-example-A.png  used on input line
- 207.
+ 209.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
 <./images/simpleshape-example-B.png, id=41, 28.105pt x 28.105pt>
 File: ./images/simpleshape-example-B.png Graphic file (type png)
 <use ./images/simpleshape-example-B.png>
 Package pdftex.def Info: ./images/simpleshape-example-B.png  used on input line
- 209.
+ 211.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
 <./images/matching-example-A.png, id=42, 28.105pt x 28.105pt>
 File: ./images/matching-example-A.png Graphic file (type png)
 <use ./images/matching-example-A.png>
-Package pdftex.def Info: ./images/matching-example-A.png  used on input line 21
-8.
+Package pdftex.def Info: ./images/matching-example-A.png  used on input line 22
+0.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
 <./images/matching-example-B.png, id=43, 28.105pt x 28.105pt>
 File: ./images/matching-example-B.png Graphic file (type png)
 <use ./images/matching-example-B.png>
 Package pdftex.def Info: ./images/matching-example-B.png  used on input line 22
-0.
+2.
 (pdftex.def)             Requested size: 100.37537pt x 100.38708pt.
  [8
 
@@ -302,29 +303,28 @@ ng-example-B.png (PNG copy)>]
 File: ./images/cnn-validation-results.png Graphic file (type png)
 <use ./images/cnn-validation-results.png>
 Package pdftex.def Info: ./images/cnn-validation-results.png  used on input lin
-e 239.
+e 241.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
 <./images/cnn-training-results.png, id=49, 462.528pt x 346.896pt>
 File: ./images/cnn-training-results.png Graphic file (type png)
 <use ./images/cnn-training-results.png>
 Package pdftex.def Info: ./images/cnn-training-results.png  used on input line 
-246.
+248.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
-
-[9
+ [9
 
  <./images/cnn-validation-results.png>]
 <./images/gan-discriminator-results.png, id=54, 462.528pt x 346.896pt>
 File: ./images/gan-discriminator-results.png Graphic file (type png)
 <use ./images/gan-discriminator-results.png>
 Package pdftex.def Info: ./images/gan-discriminator-results.png  used on input 
-line 257.
+line 259.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
 <./images/gan-generator-results.png, id=55, 462.528pt x 346.896pt>
 File: ./images/gan-generator-results.png Graphic file (type png)
 <use ./images/gan-generator-results.png>
 Package pdftex.def Info: ./images/gan-generator-results.png  used on input line
- 264.
+ 266.
 (pdftex.def)             Requested size: 430.00462pt x 322.51994pt.
  [10 <./images/cnn-training-results.png>] [11 <./images/gan-discriminator-resul
 ts.png>] [12 <./images/gan-generator-results.png>]
@@ -364,13 +364,13 @@ ts.png>] [12 <./images/gan-generator-results.png>]
 File: ./images/gan-sample-fake-solidcolor.png Graphic file (type png)
 <use ./images/gan-sample-fake-solidcolor.png>
 Package pdftex.def Info: ./images/gan-sample-fake-solidcolor.png  used on input
- line 282.
+ line 284.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
 <./images/gan-sample-real-solidcolor.png, id=69, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-solidcolor.png Graphic file (type png)
 <use ./images/gan-sample-real-solidcolor.png>
 Package pdftex.def Info: ./images/gan-sample-real-solidcolor.png  used on input
- line 285.
+ line 287.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [13 <./images/gan-sample-fake-solidcolor.png> <./images/gan-sample-real-solidc
 olor.png>]
@@ -378,13 +378,13 @@ olor.png>]
 File: ./images/gan-sample-fake-reflection.png Graphic file (type png)
 <use ./images/gan-sample-fake-reflection.png>
 Package pdftex.def Info: ./images/gan-sample-fake-reflection.png  used on input
- line 293.
+ line 295.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
 <./images/gan-sample-real-reflection.png, id=77, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-reflection.png Graphic file (type png)
 <use ./images/gan-sample-real-reflection.png>
 Package pdftex.def Info: ./images/gan-sample-real-reflection.png  used on input
- line 296.
+ line 298.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [14 <./images/gan-sample-fake-reflection.png> <./images/gan-sample-real-reflec
 tion.png>]
@@ -392,13 +392,13 @@ tion.png>]
 File: ./images/gan-sample-fake-simpleshape.png Graphic file (type png)
 <use ./images/gan-sample-fake-simpleshape.png>
 Package pdftex.def Info: ./images/gan-sample-fake-simpleshape.png  used on inpu
-t line 304.
+t line 306.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
 <./images/gan-sample-real-simpleshape.png, id=84, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-simpleshape.png Graphic file (type png)
 <use ./images/gan-sample-real-simpleshape.png>
 Package pdftex.def Info: ./images/gan-sample-real-simpleshape.png  used on inpu
-t line 307.
+t line 309.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [15 <./images/gan-sample-fake-simpleshape.png> <./images/gan-sample-real-simpl
 eshape.png>]
@@ -406,13 +406,13 @@ eshape.png>]
 File: ./images/gan-sample-fake-matching.png Graphic file (type png)
 <use ./images/gan-sample-fake-matching.png>
 Package pdftex.def Info: ./images/gan-sample-fake-matching.png  used on input l
-ine 315.
+ine 317.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
 <./images/gan-sample-real-matching.png, id=91, 722.7pt x 722.7pt>
 File: ./images/gan-sample-real-matching.png Graphic file (type png)
 <use ./images/gan-sample-real-matching.png>
 Package pdftex.def Info: ./images/gan-sample-real-matching.png  used on input l
-ine 318.
+ine 320.
 (pdftex.def)             Requested size: 324.20848pt x 324.21243pt.
  [16 <./images/gan-sample-fake-matching.png> <./images/gan-sample-real-matching
 .png>] [17
@@ -430,7 +430,7 @@ Here is how much of TeX's memory you used:
  5732 multiletter control sequences out of 15000+600000
  7980 words of font info for 28 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 41i,8n,25p,1106b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,8n,25p,1102b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019basic/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019basic/texmf-dist/fo
@@ -443,7 +443,7 @@ ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019b
 asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
 019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
 ve/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on report.pdf (19 pages, 745255 bytes).
+Output written on report.pdf (19 pages, 745832 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
