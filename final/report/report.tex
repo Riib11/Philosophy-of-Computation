@@ -1,6 +1,9 @@
 \documentclass{article}
 
 \usepackage{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
 
 \renewcommand{\bf}{\textbf}
 \renewcommand{\it}{\textit}
@@ -94,14 +97,112 @@ The presence of many general (often higher-order) patterns that humans intuitive
 This explanation, however, does not provide a clear path forward for how to solve the frame problem.
 The next section describes an experiment that aims to explore one possible solution that keeps the previous explanation of the frame problem in mind.
 
+\section{Incentivizing Abstraction}
+
+As is clear in the Breakout case, on obvious way to force an AI to learn some higher-order pattern is to introduce that pattern explicitly as variance in the training.
+So in the Breakout case, a way to make the AI learn to deal with paddles at different heights would be to modify the game it trained on to have the paddle at a random height each game. This slows down the training process a bit, but when all is said and done the pattern will have been learned.
+The problem with this approach to teaching higher-order patterns to AIs is that it falls into the same traps as symbolic approaches.
+This is because the higher-order pattern must be \it{explicity} introduced into the training data.
+In this way, the same symbolic approach from early AI is applied to the training data rather than the AI algorithm itself.
+So the engineer training the AI, in the symbolic way, would need to explicity come up with all the higher-order patterns they want to teach the AI and embed them in the training data themselves.
+The ideal solution to the frame problem would keep in tact the connectionist approach --- somehow getting the AI to learn higher-order patterns that human engineers did not contrive beforehand.
+
+This ideal solution, in a simplistic form, seems impossible.
+If for a given higher-order pattern an AI trains on data that is not contrived (i.e. doesn't have the pattern explicitly or necessarily-strongly present) and there is not utility-maximizing reason for the AI to be likely to learn the pattern, then what reason is there left for the AI to ever learn the pattern? Of course is will not learn the pattern!
+
+This simple setup needs to be modified in some way.
+The weight-updating algorithm for the AI is one possible feature to tweak with.
+The other is the training data.
+Perhaps there is a way to engineer the training data not to be manually contrived by a human engineer, but rather to be ``contrived'' by another AI.
+This thought is the inspiration for a certain class of AI called \textbf{generative adversarial networks (GAN)}.
+
+% The setup for a GAN is based on the situation where one agent tries to fool the other agent into
+The setup for a GAN is based on the situtation where a human tries to engineer \it{adversarial examples} that trick a successfuly trained AI classifier into classifying inputs completely differently from how a typical human would.
+A striking example of this is how a CNN that correctly classifies a field of grazing cows suddenly classifies the same image as a medow of flamingos when the cows are colored sligtly pink.
+A GAN consists of two CNNs that mimic the two sides of the previously-described situation.
+On CNN, the \bf{discriminator} acts as the original CNN. It recieves inputs and classifies them.
+The other CNN, the \bf{generator} acts as the human. It recieves as input a random vector (for the sake of varied outputs) and produces a ``fake'' datum.
+To train, a single-classed data set is provided and the following steps are followed each iteration:
+
+\begin{enumerate}
+\item
+\it{Real} or \it{Fake} is chosen at random.
+\item
+If \it{Real} was chosen, then a datum from the original data set is selected at random.
+If \it{Fake} was chosen, then the generator is fed a random vector and the output is treated as the selected datum.
+\item
+The selected datum is fed to the discriminator.
+The output (the output layer has two nodes) is interpretted as a probability assignment of whether the image was \it{Real} (from the original data set) or \it{Fake} (from the generator).
+\item
+The generator scores proportionally to the weighting of \it{Real} when it generated the selected datum, and to the weighting of \it{Fake} when it did not.
+The discriminator scores proportionally to the weighting \it{Fake} when the generator produced the selected datum, and  to the weighting of \it{Real} when it did not.
+\item
+The generator and discriminator each update the weights of their network per usual based on their scores.
+\end{enumerate}
+Note that the competition between the generator and discriminator is explicitly zero-sum --- they cannot both win. The ideal training scenario is where each CNN's adeptness increases in lock step until they reach a stable equilibrium where each network is so good that the score each round is only left to fair random chance.
+
+Theoretically, a GAN should discourage the development of first-order patterns because as easy as they are for the discriminator to pick up on in the original data, it is just as easy for the generator to take advantage of them to trick the discriminator.
+This is how the frame probably can be potentially solved: the generator \it{forces} the discriminator to rely on general patterns even if they do not exist commonly in the original data.
+
+However, this is a highly theoretical hypothesis. GANs are a hot topic in AI right now both because they have shown some promise especially on the generative side of AI, but also because they are very new and not much is known about their theoretical properties in practice.
+The following experiment compares the performance of a CNN and a GAN on a few image-classifying tasks aim to expose more exactly the possible ability of GANs to develope abstractions more effectively than CNNs.
+
 \section{Experimental Design}
 
+A CNN and a GAN were trained on the following image-classification tasks.
+The CNN decides between class A versus class B, and the GAN recognizes class A (versus whatever the generator comes up with).
+\begin{enumerate}
+\item[I.] (solidcolor) solid black versus solid white
+\item[II.] (reflection) reflected horizontally versus random
+\item[III.] (simpleshape) triangle versus square
+\item[IV.] (matching) two of the same shape versus two different shapes
+\end{enumerate}
+
+Tasks I and II were chosen as good benchmarks for expectedly perfect performance, in order to determine the optimal amount of training iterations to allow.
+Tasks III and IV were chosen as more difficult to test the limits of both AIs, especially because Melanie mentioned task IV as being notoriously difficult for CNNs.
+
+\begin{itemize}
+\item
+For each task, the CNN was trained with a set of 2000 original images with 1000 for each class.
+60\% of the images were designated as the \it{training set} and 40\% were designated as the \it{validation set}.
+The CNN trains by a combination of supervized and unsupervized learning: each iteration, the CNN trains first on a single image from the training set and recieves the incorrectness score of its classification, and then second on the whole of the validation set and recieves a cumulative score for its classification on all of it.
+
+\item
+For each task, the GAN was trained with a set of 1000 original images (all from class A of the task). The role of the validation set is played by the generator.
+Each iteration, the disciminator is trained on either an image from the original images or the generator. Then the discriminator and generator are appropriately updated.
+\end{itemize}
 
 
 \section{Results}
 
+\subsection{CNN Results}
+
+Each \it{epoch} is a batch of 50 training iterations.
+The \it{valdidation accuracy} is the accuracy of the CNN classification predictions on the validation set (the standard measure).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{cnn-results.png}
+\end{figure}
+
+\subsection{GAN Results}
+
+
+
+
+% TODO
+
 \section{Conclusions}
 
-\section*{References}
+There were some obvious shortcomings to this setup for comparing a CNN and a GAN.
+The comparison is not apples-to-apples because the networks are designed in different ways as to require different types of inputs and present different types of outputs.
+The CNN was given access to 1000 examples of class A and 1000 examples of class B, and so was classifying between two relatively-well-structured classes.
+The GAN on the other hand was given access to just 1000 examples of class A, and the generator was expected to fill the role of providing examples of class B, and the discriminator just has to decide between class A and not class A which may not be as well-structured as class B depending on how the generator ends up looking.
+
+Additionally, the CNN provided an exact measure of how well it classified images, but I was unable to program the GAN to provide an exact measure for how well it classified images of class A and B combined (so as to test both networks on the same total data set in the end).
+This is certainly possible, but I was not knowledgeable about Tensorflow to successfuly implement this feature.
+So, the results that I aquired are judged subjectively by how well the generator performed.
+
+% TODO: what does this say about how well GANs solve the frame problem?
 
 \end{document}
